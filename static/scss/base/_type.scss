@@ -1,0 +1,51 @@
+// Typography Yo
+
+@font-face {
+	font-family: 'Greycliff CF Bold';
+	src: url('../fonts/greycliffcf/GreycliffCF-Bold.eot');
+	src: local('☺'),
+		 url('../fonts/greycliffcf/GreycliffCF-Bold.woff') format('woff'),
+		 url('../fonts/greycliffcf/GreycliffCF-Bold.ttf') format('truetype'),
+		 url('../fonts/greycliffcf/GreycliffCF-Bold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Greycliff CF Bold O';
+	src: url('../fonts/greycliffcf/GreycliffCF-BoldOblique.eot');
+	src: local('☺'),
+		 url('../fonts/greycliffcf/GreycliffCF-BoldOblique.woff') format('woff'),
+		 url('../fonts/greycliffcf/GreycliffCF-BoldOblique.ttf') format('truetype'),
+		 url('../fonts/greycliffcf/GreycliffCF-BoldOblique.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Greycliff CF Medium';
+	src: url('../fonts/greycliffcf/GreycliffCF-Medium.eot');
+	src: local('☺'),
+		 url('../fonts/greycliffcf/GreycliffCF-Medium.woff') format('woff'),
+		 url('../fonts/greycliffcf/GreycliffCF-Medium.ttf') format('truetype'),
+		 url('../fonts/greycliffcf/GreycliffCF-Medium.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Greycliff CF Medium O';
+	src: url('../fonts/greycliffcf/GreycliffCF-MediumOblique.eot');
+	src: local('☺'),
+		 url('../fonts/greycliffcf/GreycliffCF-MediumOblique.woff') format('woff'),
+		 url('../fonts/greycliffcf/GreycliffCF-MediumOblique.ttf') format('truetype'),
+		 url('../fonts/greycliffcf/GreycliffCF-MediumOblique.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+h1, h2, h3 {
+	font-family: $f-grey-b;
+
+	em {
+		font-family: $f-grey-bi;
+	}
+}
+

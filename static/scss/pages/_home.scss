@@ -1,0 +1,12 @@
+// Home page specific
+
+.home {
+	.banner {
+		background-color: $c-black;
+		color: $c-white;
+
+		.play {
+			margin-top: 0.3em;
+		}
+	}
+}

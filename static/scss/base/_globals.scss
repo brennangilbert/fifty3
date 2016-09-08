@@ -1,0 +1,19 @@
+// Globals
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+	font-family: $f-grey-med;
+	font-size: 1.6em;
+	margin-top: $header-height;
+
+	em {
+		font-family: $f-grey-medi;
+	}
+}

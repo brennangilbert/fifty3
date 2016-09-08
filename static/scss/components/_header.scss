@@ -1,0 +1,26 @@
+// Header
+
+body > header {
+	background: $c-black;
+	left: 0;
+	max-height: $header-height;
+	padding: 30px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+
+	.logo {
+		float: left;
+	}
+	nav {
+		float: right;
+		font-family: $f-grey-b;
+		text-transform: uppercase;
+
+		a {
+			color: $c-white;
+			display: inline-block;
+			padding: 10px 15px;
+		}
+	}
+}
