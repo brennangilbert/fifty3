@@ -41,11 +41,27 @@
 	font-style: normal;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
 	font-family: $f-grey-b;
+	line-height: 1.2;
+	text-transform: uppercase;
 
 	em {
 		font-family: $f-grey-bi;
 	}
+	strong {
+		color: $c-teal;
+	}
+}
+
+h2 {
+	font-size: 2.5em;
+	margin-bottom: 0;
+}
+
+h3 {
+	color: $c-teal;
+	font-size: 1.9em;
+	margin: 0.5em 0;
 }
 

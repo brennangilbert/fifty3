@@ -1,0 +1,16 @@
+// Square Grid, like on Home Portfolio
+
+.square {
+	background: $c-black;
+	display: inline-block;
+
+	&:nth-child(even) {
+		background: #383839;
+	}
+
+	&:after {
+		content: "";
+		display: block;
+		padding-bottom: 100%;
+	}
+}

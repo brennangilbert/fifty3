@@ -1,12 +1,57 @@
 // Home page specific
 
 .home {
+	margin-top: 0;
+
 	.banner {
 		background-color: $c-black;
+		background-size: cover;
 		color: $c-white;
+		overflow: hidden;
+		padding-top: 200px;
+		position: relative;
+
+		&:after {
+			background: rgba(0,0,0,0.5);
+			bottom: 0;
+			content: "";
+			display: block;
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+	}
+		video {
+			bottom: -100%;
+			height: auto;
+			left: -100%;
+			position: absolute;
+			margin: auto;
+			min-height: 100%;
+			min-width: 100%;
+			right: -100%;
+			top: -100%;
+		}
 
 		.play {
 			margin-top: 0.3em;
+		}
+
+	.wrapper {
+		position: relative;
+		z-index: 1;
+	}
+
+	.dark {
+		background-image: url('../img/fifty3-home-black_background.jpg');
+	}
+
+	.portfolio, .form {
+		h2, p {
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 650px;
 		}
 	}
 }

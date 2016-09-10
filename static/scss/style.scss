@@ -9,13 +9,17 @@
 
 // Layout
 @import "layout/sections";
+@import "layout/square-grid";
 
 // Components
 @import "components/header";
 @import "components/buttons";
+@import "components/forms";
+@import "components/footer";
 
 // Pages
 @import "pages/home";
 
 // Vendors
-@import "vendor/font-awesome";
+@import "vendor/pure-grid";
+@import "vendor/featherlight";

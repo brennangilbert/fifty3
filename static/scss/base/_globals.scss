@@ -1,19 +1,39 @@
 // Globals
 
 html {
-  box-sizing: border-box;
-  font-size: 10px;
+	background-color: $c-black;
+	box-sizing: border-box;
+	font-size: 10px;
 }
 *, *:before, *:after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 body {
+	background-color: $c-white;
 	font-family: $f-grey-med;
 	font-size: 1.6em;
+	letter-spacing: 1px;
+	line-height: 1.5;
 	margin-top: $header-height;
+	text-align: center;
 
 	em {
 		font-family: $f-grey-medi;
 	}
+}
+
+ul {
+	li {
+		line-height: 1.2;
+		margin-bottom: 0.6em;
+	}
+}
+
+
+// Global Classes
+
+.no-bullets {
+	list-style: none;
+	padding-left: 0;
 }
