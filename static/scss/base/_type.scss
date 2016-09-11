@@ -46,6 +46,10 @@ h1, h2, h3, h4 {
 	line-height: 1.2;
 	text-transform: uppercase;
 
+	&:first-child {
+		margin-top: 0;
+	}
+
 	em {
 		font-family: $f-grey-bi;
 	}
