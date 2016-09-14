@@ -1,0 +1,70 @@
+// About page
+
+.about {
+	.grid {
+		h4 {
+			margin-bottom: 0;
+
+			+ p {
+				margin-top: 5px;
+			}
+		}
+		p {
+			font-size: 0.8em;
+		}
+	}
+	
+	.reason-wrapper {
+		border: 3px solid $c-black;
+		color: $c-teal;
+		margin: 4em auto 0;
+		max-width: 750px;
+		padding: 0 20px 20px;
+		text-transform: uppercase;
+
+		img {
+			background-color: $c-white;
+			box-sizing: initial;
+			margin-top: -32px;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+		strong {
+			color: $c-black;
+			display: block;
+		}
+	}
+
+	.state-info {
+		img {
+			max-width: 190px;
+			width: 100%;
+		}
+	}
+	.clients {
+		margin-top: 130px;
+		text-align: left;
+
+		h3 {
+			color: $c-black;
+			font-family: $f-grey-med;
+			font-size: 1.5em;
+			font-weight: normal;
+			margin-bottom: 1em;
+		}
+		strong {
+			font-family: $f-grey-b;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		ul {
+			list-style: none;
+			margin-top: 0;
+			padding-left: 0;
+		}
+
+		.client-state {
+			margin-bottom: 1.5em;
+		}
+	}
+}

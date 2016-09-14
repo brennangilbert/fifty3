@@ -1,7 +1,7 @@
 // Banners
 
 .banner {
-	padding: 200px 0;
+	padding: 100px 0;
 	width: 100%;
 
 	h1, h3 {
@@ -10,6 +10,29 @@
 	}
 	h1 {
 		margin-bottom: 0.25em;
+	}
+	h2 {
+		padding: 36px 0;
+		position: relative;
+
+		&:before,
+		&:after {
+			background: $c-black;
+			content: "";
+			display: block;
+			height: 3px;
+			left: 0;
+			margin: auto;
+			position: absolute;
+			right: 0;
+			width: 130px;
+		}
+		&:before {
+			top: 0;
+		}
+		&:after {
+			bottom: 0;
+		}
 	}
 	h3 {
 		color: $c-white;

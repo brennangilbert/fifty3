@@ -23,6 +23,15 @@
 		background: $c-teal;
 		border-color: $c-teal;
 		color: $c-white;
+
+		strong {
+			color: $c-black;
+		}
+	}
+
+	strong {
+		color: $c-teal;
+		transition: $transition;
 	}
 }
 

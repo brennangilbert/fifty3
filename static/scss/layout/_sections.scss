@@ -19,10 +19,10 @@ section + section {
 }
 
 .dark {
-	background-color: $c-black;
+	background: $c-black fixed url('../img/fifty3-home-black_background.jpg');
 	color: $c-white;
 }
 
-.image {
+.no-padding {
 	padding: 0;
 }
