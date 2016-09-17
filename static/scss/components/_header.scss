@@ -90,6 +90,18 @@ body > header {
 
 			li.current_page_item a {
 				color: $c-teal;
+				position: relative;
+
+				&:before {
+					background: $c-teal;
+					content: "";
+					display: block;
+					height: 6px;
+					left: 15px;
+					position: absolute;
+					right: 15px;
+					top: -30px;
+				}
 			}
 
 			a {

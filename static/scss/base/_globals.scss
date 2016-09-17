@@ -45,3 +45,15 @@ video {
 	list-style: none;
 	padding-left: 0;
 }
+.list-links {
+	@extend .no-bullets;
+
+	a {
+		color: $c-black;
+		text-transform: uppercase;
+
+		strong {
+			color: $c-teal;
+		}
+	}
+}

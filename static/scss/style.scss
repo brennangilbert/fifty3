@@ -1,6 +1,5 @@
-/// Helpers
+// Helpers
 @import "helpers/variables";
-
 
 // Base
 @import "base/normalize";
@@ -21,6 +20,9 @@
 // Pages
 @import "pages/home";
 @import "pages/about";
+@import "pages/work";
+@import "pages/people";
+@import "pages/services";
 
 // Vendors
 @import "vendor/pure-grid";

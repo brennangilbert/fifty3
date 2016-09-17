@@ -18,8 +18,56 @@ section + section {
 	}
 }
 
+// Section w/ video background and play button
+.video-bg {
+	background-color: $c-black;
+	background-size: cover;
+	min-height: 582px;
+	overflow: hidden;
+	position: relative;
+
+	video {
+		bottom: -100%;
+		height: auto;
+		left: -100%;
+		position: absolute;
+		margin: auto;
+		min-height: 100%;
+		min-width: 100%;
+		right: -100%;
+		top: -100%;
+		width: auto;
+	}
+
+	.play {
+		bottom: 0;
+		display: block;
+		height: 90px;
+		left: 0;
+		margin: auto;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 90px;
+
+		img {
+			display: block;
+			max-width: 100%;
+		}
+	}
+	h3 + .play {
+		margin-top: 0.3em;
+	}
+}
+
 .dark {
-	background: $c-black fixed url('../img/fifty3-home-black_background.jpg');
+	background: $c-black fixed url('../img/fifty3-background-black.jpg');
+	background-size: cover;
+	color: $c-white;
+}
+
+.primary-color {
+	background: $c-teal;
 	color: $c-white;
 }
 

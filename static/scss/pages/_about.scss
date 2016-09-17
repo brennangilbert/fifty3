@@ -13,14 +13,43 @@
 			font-size: 0.8em;
 		}
 	}
+
+	.dark {
+		padding: 180px 0;
+	}
 	
 	.reason-wrapper {
-		border: 3px solid $c-black;
-		color: $c-teal;
 		margin: 4em auto 0;
-		max-width: 750px;
-		padding: 0 20px 20px;
-		text-transform: uppercase;
+		min-height: 230px;
+		position: relative;
+
+		&:before {
+			background: $c-white;
+			content: "";
+			display: block;
+			height: 40px;
+			left: 0;
+			margin: auto;
+			position: absolute;
+			right: 0;
+			top: -20px;
+			width: 106px;
+		}
+
+		> div {
+			border: 3px solid $c-black;
+			left: 20px;
+			margin: auto;
+			max-width: 750px;
+			padding: 0 20px 20px;
+			position: absolute;
+			right: 20px;
+			top: 0;
+		}
+
+		p {
+			@extend .emphasis;
+		}
 
 		img {
 			background-color: $c-white;
@@ -35,10 +64,28 @@
 		}
 	}
 
+	#map {
+		height: 560px;
+
+		@media screen and (max-width: $bp-m) {
+			height: 450px;
+		}
+		@media screen and (max-width: $bp-s) {
+			height: 320px;
+		}
+		@media screen and (max-width: $bp-xs) {
+			height: 180px;
+		}
+	}
+
 	.state-info {
 		img {
 			max-width: 190px;
 			width: 100%;
+		}
+
+		> div {
+			display: none;
 		}
 	}
 	.clients {
