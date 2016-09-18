@@ -7,6 +7,10 @@
 <!DOCTYPE html>
 <html <? language_attributes(); ?>>
 <head>
+	<?
+	$seo_title	= get_field( 'seo_title' );
+	$seo_descr	= get_field( 'seo_description' );
+	?>
 	<meta charset="<? bloginfo( 'charset' ); ?>">
 	<meta name="description" content="<? if ( $seo_descr ) { echo $seo_descr; } else { bloginfo( 'description' ); } ?>"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />

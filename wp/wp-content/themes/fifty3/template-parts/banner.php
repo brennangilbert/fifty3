@@ -10,8 +10,12 @@ if(is_page('home')) {?>
 	<?php while ( have_posts() ) : the_post(); ?>
 		<?php the_field('background_video'); ?>
 		<div class="wrapper">
-			<?php the_field('banner_text'); ?>
-			<a class="play" href="<?php the_field('lightbox_video_url'); ?>" data-featherlight="iframe"><img src="<?php bloginfo('template_directory');?>/img/fifty3-btn-play.svg" alt="Play"></a>
+			<?php the_field('banner_text'); ?>			
+			<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+			<div class="wistia_embed wistia_async_fmno38fmqm popover=true popoverContent=html"
+			style="display:inline-block; white-space:nowrap;">
+				<a class="play" href="#"><img src="<?php bloginfo('template_directory');?>/img/fifty3-btn-play.svg" alt="Play"></a>
+			</div>
 		</div>
 	<?php endwhile; ?>
 </section><!-- // .banner -->

@@ -11,60 +11,57 @@ get_template_part( 'template-parts/banner' );
 
 ?>
 
-<section>
-	<div class="wrapper grid">
-		<div class="grid-1-3">
-			<img src="<?php bloginfo('template_directory');?>/img/fifty3-home-illustration-strategy.svg" alt="Strategy Illustration" width="64px" height="64px">
-			<h3>Strategy</h3>
-			<ul class="no-bullets">
-				<li>Multi-Channel Campaigns</li>
-				<li>Strategy Consulting</li>
-				<li>Photography &amp; Video</li>
-			</ul>
+<? if( have_rows('services') ) : ?>
+	<section>
+		<div class="wrapper grid">
+			<? while ( have_rows('services') ) : the_row(); ?>
+				<div class="grid-1-3">
+					<?
+					$icon = get_sub_field('icon');
+					$url = $icon['url'];
+					$alt = $icon['alt'];
+					?>
+					<img src="<? echo $url ?>" alt="<? echo $alt ?>" width="64px" height="64px">
+					<h3><? the_sub_field('title') ?></h3>
+					<? if( have_rows('bullet_points') ) : ?>
+						<ul class="no-bullets">
+							<? while ( have_rows('bullet_points') ) : the_row(); ?>
+								<li><? the_sub_field('point') ?></li>
+							<? endwhile; ?>
+						</ul>
+					<? endif; ?>
+				</div>
+			<? endwhile; ?>
 		</div>
-		<div class="grid-1-3">
-			<img src="<?php bloginfo('template_directory');?>/img/fifty3-home-illustration-design.svg" alt="Design Illustration" width="64px" height="64px">
-			<h3>Design</h3>
-			<ul class="no-bullets">
-				<li>Branding Identity</li>
-				<li>Website Development</li>
-				<li>Marketing Collateral</li>
-			</ul>
+		<a class="btn" href="<?php echo get_page_link(13); ?>">Our Services</a>
+	</section><!-- // .col-3 -->
+<? endif; ?>
+<? if( get_field('about-headline') ) : ?>
+	<section class="dark">
+		<div class="wrapper">
+			<h2><? the_field('about-headline'); ?></h2>
+			<p><? the_field('about-content'); ?></p>
+			<a class="btn" href="<?php echo get_page_link(7); ?>">About Us</a>
 		</div>
-		<div class="grid-1-3">
-			<img src="<?php bloginfo('template_directory');?>/img/fifty3-home-illustration-digital.svg" alt="Digital Illustration" width="64px" height="64px">
-			<h3>Digital</h3>
-			<ul class="no-bullets">
-				<li>Pay-Per-Click</li>
-				<li>SEO Optimization</li>
-				<li>Re-Targeting Advertising</li>
-			</ul>
+	</section>
+<? endif; ?>
+<? if( get_field('portfolio-headline') ) : ?>
+	<section class="portfolio">
+		<div class="wrapper">
+			<h2><? the_field('portfolio-headline'); ?></h2>
+			<p><? the_field('portfolio-content'); ?></p>
+			<div class="grid">
+				<a class="grid-1-3 square" href="#"></a>
+				<a class="grid-1-3 square" href="#"></a>
+				<a class="grid-1-3 square" href="#"></a>
+				<a class="grid-1-3 square" href="#"></a>
+				<a class="grid-1-3 square" href="#"></a>
+				<a class="grid-1-3 square" href="#"></a>
+			</div>
+			<a class="btn" href="<?php echo get_page_link(9); ?>">Our Work</a>
 		</div>
-	</div>
-	<a class="btn" href="<?php echo get_page_link(13); ?>">Our Services</a>
-</section><!-- // .col-3 -->
-<section class="dark">
-	<div class="wrapper">
-		<h2>What we <strong>stand</strong> for</h2>
-		<p>Fifty3 is a full-service creative company based in Denver, CO. We’re a group of creatives, analysts, strategists, creators, artists, and marketing scientists who have joined forces from all over the country. Specializing in the multi-family housing industry, we offer a variety of services that work hand-in-hand with each other. We’re everything you need in one place.</p>
-		<a class="btn" href="<?php echo get_page_link(7); ?>">About Us</a>
-	</div>
-</section>
-<section class="portfolio">
-	<div class="wrapper">
-		<h2>Check out the <strong>good</strong> stuff</h2>
-		<p>We do work that we’re proud to call our own. We’d be honored for you to take a peek at the good stuff.</p>
-		<div class="grid">
-			<a class="grid-1-3 square" href="#"></a>
-			<a class="grid-1-3 square" href="#"></a>
-			<a class="grid-1-3 square" href="#"></a>
-			<a class="grid-1-3 square" href="#"></a>
-			<a class="grid-1-3 square" href="#"></a>
-			<a class="grid-1-3 square" href="#"></a>
-		</div>
-		<a class="btn" href="<?php echo get_page_link(9); ?>">Our Work</a>
-	</div>
-</section><!-- // .portfolio -->
+	</section>
+<? endif; ?>
 <section class="no-padding">
 	<img src="<?php bloginfo('template_directory');?>/img/fifty3-home-group.gif" alt="Fifty3 Team on Mountain" width="100%">
 </section>
