@@ -1,0 +1,15 @@
+// People page specific styles
+
+.page-people {
+	.jokes {
+		#joke {
+			@extend .emphasis;
+			display: none;
+			margin-top: 1.5em;
+		}
+		button {
+			margin-top: 0.75em;
+			outline: none;
+		}
+	}
+}

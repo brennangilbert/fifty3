@@ -1,0 +1,70 @@
+// Footer
+
+footer.global {
+	background-color: $c-black;
+	padding: 76px 0;
+
+	h4 {
+		color: $c-teal;
+
+		strong {
+			color: $c-white;
+		}
+	}
+	svg {
+		display: block;
+		margin: 0 auto;
+	}
+	nav {
+		color: $c-white;
+		display: inline-block;
+		font-size: 0.65em;
+		margin-top: 2em;
+		text-transform: uppercase;
+	}
+	a {
+		color: $c-white;
+	}
+
+	svg + nav {
+		a:hover {
+			text-decoration: underline;
+		}
+		a:after,
+		span + span:before {
+			color: $c-teal;
+			content: "|";
+			display: inline-block;
+		}
+		a:after {
+			margin-left: 8px;
+			margin-right: 5px;
+		}
+		span + span:before {
+			margin-left: 5px;
+			margin-right: 8px;
+		}
+	}
+
+	.social {
+		margin-left: 10px;
+		a {
+			color: $c-teal;
+			font-size: 1.65em;
+			text-align: center;
+			transition: $transition;
+
+			&:hover {
+				color: $c-white;
+			}
+		}
+		i {
+			min-width: 22px;
+		}
+		span {
+			display: inline-block;
+			font-size: 0 !important;
+			width: 0;
+		}
+	}
+}

@@ -1,0 +1,49 @@
+// Services page specific
+
+.page-services {
+	.grid {
+		h4 {
+			font-family: $f-grey-med;
+			margin: 0.5em 0 0;
+		}
+	}
+	.square {
+		&:hover {
+			background-color: $c-teal;
+			color: $c-white;
+
+			> div div {
+				display: none;
+			}
+			ul {
+				display: inline-block;
+			}
+		}
+		ul {
+			display: none;
+		}
+	}
+	.list-links {
+		padding: 20px 0 22px;
+		position: relative;
+
+		&:before,
+		&:after {
+			background: $c-black;
+			content: "";
+			display: block;
+			height: 3px;
+			left: 0;
+			margin: auto;
+			position: absolute;
+			right: 0;
+			width: 130px;
+		}
+		&:before {
+			top: 0;
+		}
+		&:after {
+			bottom: 0;
+		}
+	}
+}

@@ -1,0 +1,180 @@
+// Header
+
+.logged-in header {
+	top: 32px;
+
+	@media screen and (max-width: 782px) {
+		top: 46px;
+	}
+}
+
+body > header {
+	height: $header-height;
+	left: 0;
+	max-height: $header-height;
+	padding: 30px;
+	position: fixed;
+	top: 0;
+	transition: all 500ms ease-in-out;
+	width: 100%;
+	z-index: 10;
+
+	.logo {
+		float: left;
+
+		svg {
+			transition: all 500ms ease-in-out;
+
+			.letter {
+				fill: $c-white;
+			}
+		}
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			display: inline-block;
+		}
+	}
+	#menu-button, #menu-close {
+		position: absolute;
+		right: 30px;
+		top: 30px;
+		width: 32px;
+
+		span {
+			background: $c-white;
+			display: block;
+			height: 5px;
+
+			+ span {
+				margin-top: 8px;
+			}
+		}
+	}
+	#menu-button {
+		display: none;
+		z-index: 5;
+	}
+	#menu-close {
+		display: none;
+		color: $c-white;
+		font-size: 1.5em;
+		position: fixed;
+		text-align: center;
+		z-index: 7;
+
+		i {
+			display: block;
+			line-height: 0.75;
+		}
+	}
+	nav {
+		float: right;
+		font-family: $f-grey-b;
+		text-transform: uppercase;
+
+		a {
+			color: $c-white;
+			display: inline-block;
+			padding: 10px 15px;
+		}
+	}
+	
+	@media screen and (min-width: $bp-m+1px) {
+		&.normal {
+			background-color: $c-white;
+
+			svg {
+				transform: scale(0.75) translate(-18px, -36px);
+
+				.letter {
+					fill: $c-black;
+				}
+			}
+
+			li.current_page_item a {
+				color: $c-teal;
+				position: relative;
+
+				&:before {
+					background: $c-teal;
+					content: "";
+					display: block;
+					height: 6px;
+					left: 15px;
+					position: absolute;
+					right: 15px;
+					top: -30px;
+				}
+			}
+
+			a {
+				color: $c-black;
+				transition: $transition;
+
+				&:hover {
+					color: $c-teal;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: $bp-l) {
+		nav a {
+			font-size: 0.88em;
+			padding: 10px 7px;
+		}
+	}
+	@media screen and (max-width: $bp-m) {
+		bottom: 0;
+		max-height: none;
+		padding: 0;
+		position: absolute;
+		transition: none;
+
+		&.show {
+			background: $c-black;
+			height: 100%;
+		}
+
+		svg {
+			transform: scale(0.75);
+		}
+		#menu-button.show {
+			display: block;
+		}
+		nav {
+			bottom: 0;
+			display: none;
+			float: none;
+			font-size: 2em;
+			height: 590px;
+			margin: auto;
+			position: absolute;
+			top: 0;
+			width: 100%;
+
+			&.show {
+				display: block;
+			}
+
+			li {
+				display: block;
+				margin: 0;
+
+				&.current_page_item a {
+					color: $c-teal;
+				}
+			}
+			a {
+				height: 100%;
+				padding: 25px 0;
+				width: 100%;
+			}
+		}
+	}
+}
