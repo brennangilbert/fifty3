@@ -24,27 +24,38 @@ while ( have_posts() ) : the_post(); ?>
 	<div class="wrapper">
 		<nav class="filter">
 			<button class="active btn fil-cat" href="" data-rel="all">All</button>
-			<button class="btn fil-cat" data-rel="identity">Brand Identity</button>
+			<button class="btn fil-cat" data-rel="brand-identity">Brand Identity</button>
 			<button class="btn fil-cat" data-rel="design">Design</button>
-			<button class="btn fil-cat" data-rel="digital-cs">Digital Case Study</button>
-			<button class="btn fil-cat" data-rel="photo-video">Photography/Videography</button>
+			<button class="btn fil-cat" data-rel="digital-case-study">Digital Case Study</button>
+			<button class="btn fil-cat" data-rel="photography-videography">Photography/Videography</button>
 			<button class="btn fil-cat" data-rel="strategy">Strategy</button>
 			<button class="btn fil-cat" data-rel="website">Website</button>
 		</nav>
-		<div id="portfolio" class="grid">
-			<a class="grid-1-3 square scale-anm all identity" href="#"></a>
-			<a class="grid-1-3 square scale-anm all identity" href="#"></a>
-			<a class="grid-1-3 square scale-anm all design" href="#"></a>
-			<a class="grid-1-3 square scale-anm all digital-cs" href="#"></a>
-			<a class="grid-1-3 square scale-anm all digital-cs" href="#"></a>
-			<a class="grid-1-3 square scale-anm all digital-cs" href="#"></a>
-			<a class="grid-1-3 square scale-anm all photo-video" href="#"></a>
-			<a class="grid-1-3 square scale-anm all photo-video" href="#"></a>
-			<a class="grid-1-3 square scale-anm all strategy" href="#"></a>
-			<a class="grid-1-3 square scale-anm all website" href="#"></a>
-			<a class="grid-1-3 square scale-anm all website" href="#"></a>
-			<a class="grid-1-3 square scale-anm all website" href="#"></a>
-		</div>
+		<? 
+		// Get Projects
+		$args = array('post_type' => 'work');
+		$loop = new WP_Query( $args );
+
+		echo '<div id="portfolio" class="grid">';
+
+			// Get categories as slugs to add as classes
+			while ( $loop->have_posts() ) : $loop->the_post();
+				$categories = get_categories();
+				$i = 0;
+				$sep = ' ';
+				$cats = '';
+				foreach ( ( get_the_category() ) as $category ) {
+					if (0 < $i) $cats .= $sep;
+					$cats .= $category->slug;
+					$i++;
+				}
+
+			?>
+				<a class="grid-1-3 square scale-anm all <? echo $cats ?>" href="<? echo get_permalink(); ?>"><? echo get_the_post_thumbnail( $post_id, 'thumbnail', array( 'class' => 'bg' ) ); ?></a>
+			<? endwhile;
+
+		echo '</div>';
+		?>
 		<a class="btn" href="<? echo get_page_link(11); ?>">Meet <strong>the Brains</strong> Behind the Ideas</a>
 	</div>
 </section><!-- // .portfolio -->

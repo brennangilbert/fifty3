@@ -210,7 +210,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 2
+		"syntaxCheckerStyle": 0
 		},
 	"\/js\/jquery.usmap.js": {
 		"fileType": 64,

@@ -50,14 +50,19 @@ get_template_part( 'template-parts/banner' );
 		<div class="wrapper">
 			<h2><? the_field('portfolio-headline'); ?></h2>
 			<p><? the_field('portfolio-content'); ?></p>
-			<div class="grid">
-				<a class="grid-1-3 square" href="#"></a>
-				<a class="grid-1-3 square" href="#"></a>
-				<a class="grid-1-3 square" href="#"></a>
-				<a class="grid-1-3 square" href="#"></a>
-				<a class="grid-1-3 square" href="#"></a>
-				<a class="grid-1-3 square" href="#"></a>
-			</div>
+			<? 
+			// Get Projects Categorized as Featured
+			$args = array('post_type' => 'work', 'cat' => 9);
+			$loop = new WP_Query( $args );
+
+			echo '<div class="grid">';
+
+				while ( $loop->have_posts() ) : $loop->the_post(); ?>
+					<a class="grid-1-3 square" href="<? echo get_permalink(); ?>"><? echo get_the_post_thumbnail( $post_id, 'thumbnail', array( 'class' => 'bg' ) ); ?></a>
+				<? endwhile;
+
+			echo '</div>';
+			?>
 			<a class="btn" href="<?php echo get_page_link(9); ?>">Our Work</a>
 		</div>
 	</section>

@@ -51,13 +51,6 @@ $(document).ready(function() {
 			});
 			if( (data.name == 'AL') || (data.name == 'AZ') || (data.name == 'CA') || (data.name == 'CO') || (data.name == 'FL') || (data.name == 'GA') || (data.name == 'ID') || (data.name == 'IL') || (data.name == 'IN') || (data.name == 'LA') || (data.name == 'MA') || (data.name == 'MD') || (data.name == 'MN') || (data.name == 'MO') || (data.name == 'MS') || (data.name == 'NC') || (data.name == 'OK') || (data.name == 'TX') || (data.name == 'WI') ) {
 				$('#' + data.name).css('fill', '#7FA7AC');
-
-				// If you want to scroll down a bit, but fires everytime :/
-				
-				// $('html, body').animate({
-				// 	scrollTop: $(window).scrollTop() + 300
-				// }, 1000);
-
 				$('.state-info > div').hide();
 				$('#info-' + data.name).show();
 			}

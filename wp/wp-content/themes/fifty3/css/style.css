@@ -583,6 +583,7 @@ section + section {
       display: inline-block;
       vertical-align: middle; }
   .square img.bg {
+    height: auto;
     left: 0;
     max-width: 100%;
     position: absolute;
