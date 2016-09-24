@@ -408,6 +408,7 @@ video {
     background-color: #414042;
     color: #FFF;
     display: inline-block;
+    margin-bottom: 12px;
     padding: 8px 10px;
     text-transform: uppercase; }
     .tags .tag + .tag {
@@ -1103,6 +1104,105 @@ footer.global {
       position: absolute;
       right: 15px;
       top: -30px; } }
+
+.single-work .computer {
+  padding-top: 0;
+  position: relative; }
+  .single-work .computer:after {
+    background-color: #414042;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    width: 115px; }
+  .single-work .computer .stripe {
+    background-color: red;
+    bottom: 0;
+    height: 30%;
+    left: 0;
+    margin: auto;
+    max-height: 194px;
+    position: absolute;
+    top: -30%;
+    width: 100%;
+    z-index: 0; }
+.single-work .laptop {
+  position: relative;
+  z-index: 1; }
+  .single-work .laptop .screen {
+    background-color: #DDD;
+    border-radius: 19px;
+    display: inline-block;
+    max-width: 80%;
+    overflow: hidden;
+    padding: 3px;
+    position: relative; }
+    .single-work .laptop .screen:before {
+      background-color: rgba(255, 255, 255, 0.15);
+      content: "";
+      display: block;
+      height: 600px;
+      position: absolute;
+      left: 70%;
+      top: -120px;
+      transform: rotate(-25deg);
+      width: 300px; }
+    .single-work .laptop .screen img {
+      border: 1px solid #161616;
+      border-radius: 16px;
+      border-width: 24px 18px 32px;
+      display: block;
+      margin: 0 auto;
+      max-width: 100%; }
+  .single-work .laptop > img {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    z-index: 2; }
+  @media screen and (max-width: 520px) {
+    .single-work .laptop .screen img {
+      border-width: 12px 9px 16px; } }
+.single-work .images {
+  margin-top: 110px; }
+  .single-work .images img {
+    display: block;
+    max-width: 100%; }
+  .single-work .images .full {
+    width: 100%; }
+  .single-work .images .not-full {
+    margin: 6em auto;
+    padding: 0 20px; }
+    .single-work .images .not-full + .not-full {
+      margin-top: 0; }
+.single-work .wrap-up {
+  padding-top: 0; }
+  .single-work .wrap-up h2 {
+    padding: 36px 0;
+    position: relative; }
+    .single-work .wrap-up h2:before, .single-work .wrap-up h2:after {
+      background: #414042;
+      content: "";
+      display: block;
+      height: 3px;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      width: 130px; }
+    .single-work .wrap-up h2:before {
+      top: 0; }
+    .single-work .wrap-up h2:after {
+      bottom: 0; }
+.single-work .end {
+  padding-top: 0; }
+  .single-work .end .btn {
+    margin-top: 0; }
 
 .grid {
   display: -webkit-flex;

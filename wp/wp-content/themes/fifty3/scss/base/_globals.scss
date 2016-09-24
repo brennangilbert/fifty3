@@ -59,10 +59,12 @@ video {
 }
 .tags {
 	margin-top: 2em;
+
 	.tag {
 		background-color: $c-black;
 		color: $c-white;
 		display: inline-block;
+		margin-bottom: 12px;
 		padding: 8px 10px;
 		text-transform: uppercase;
 
