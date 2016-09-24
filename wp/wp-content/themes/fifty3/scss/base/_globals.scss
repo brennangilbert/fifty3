@@ -57,3 +57,17 @@ video {
 		}
 	}
 }
+.tags {
+	margin-top: 2em;
+	.tag {
+		background-color: $c-black;
+		color: $c-white;
+		display: inline-block;
+		padding: 8px 10px;
+		text-transform: uppercase;
+
+		+ .tag {
+			margin-left: 12px;
+		}
+	}
+}

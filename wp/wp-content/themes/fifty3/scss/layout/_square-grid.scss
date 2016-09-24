@@ -148,4 +148,39 @@
 			width: 100%;
 		}
 	}
+} // end of .square
+
+#portfolio.grid {
+	.square {
+		&:hover {
+			color: $c-black;
+
+			.text {
+				display: block;
+			}
+		}
+	}
+	.text {
+		background: $c-white;
+		bottom: 0;
+		display: none;
+		font: 27px/1 $f-grey-b;
+		height: 160px;
+		left: 40px;
+		line-height: 150px;
+		margin: auto;
+		padding: 0 10px;
+		position: absolute;
+		right: 40px;
+		text-align: center;
+		text-transform: uppercase;
+		top: 27px;
+		z-index: 2;
+
+		span {
+			display: inline-block;
+			line-height: normal;
+			vertical-align: middle;
+		}
+	}
 }

@@ -1,0 +1,23 @@
+// Work page specific
+
+.post-type-archive-work {
+
+	// Menu highlight
+	@media screen and (min-width: $bp-m+1px) {
+		.menu-item-26 a {
+			color: $c-teal;
+			position: relative;
+
+			&:before {
+				background: $c-teal;
+				content: "";
+				display: block;
+				height: 6px;
+				left: 15px;
+				position: absolute;
+				right: 15px;
+				top: -30px;
+			}
+		}
+	}
+}

@@ -20,6 +20,24 @@ if(is_page('home')) {?>
 	<?php endwhile; ?>
 </section><!-- // .banner -->
 
+<? } elseif(is_archive()) { ?>
+
+	<section class="banner">
+		<div class="wrapper">
+			<h2><?php the_field('headline', 9); ?></h2>
+		</div>
+	</section><!-- // .banner -->
+
+<? } elseif(is_single()) { ?>
+
+	<section class="banner">
+		<div class="wrapper">
+			<h2><?php the_title(); ?><br>
+			<?php the_field('city'); ?>, <?php the_field('state'); ?>
+			</h2>
+		</div>
+	</section><!-- // .banner -->
+
 <? } else { ?>
 
 <section class="banner">
