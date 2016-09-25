@@ -33,7 +33,7 @@ if(get_field('description')) :
 
 			$terms = get_terms( array(
 			    'taxonomy' => 'category',
-			    'exclude' => '1 9'
+			    'exclude' => '1 5'
 			) );
 			                         
 			if ( $terms && ! is_wp_error( $terms ) ) :
@@ -102,11 +102,14 @@ if(get_field('prep_description')) :
 					$img = get_sub_field('image');
 					$url = $img['url'];
 					$alt = $img['alt'];
+					$cap = $img['caption'];
 					$svg = get_sub_field('svg_width');
 
-					if(get_sub_field('full-width')) { ?>
+					if(get_sub_field('full-width')) {
+						if($cap) { echo '<small>' . $cap . '</small>'; }; ?>
 						<img class="full" src="<? echo $url ?>" alt="<? echo $alt ?>">
-					<? } else { ?>
+					<? } else {
+						if($cap) { echo '<small>' . $cap . '</small>'; }; ?>
 						<img class="not-full" src="<? echo $url ?>" alt="<? echo $alt ?>" width="<? echo $svg ?>">
 					<? };
 				endwhile;
@@ -134,11 +137,14 @@ if(get_field('sol_description')) :
 					$img = get_sub_field('image');
 					$url = $img['url'];
 					$alt = $img['alt'];
+					$cap = $img['caption'];
 					$svg = get_sub_field('svg_width');
 
-					if(get_sub_field('full-width')) { ?>
+					if(get_sub_field('full-width')) {
+						if($cap) { echo '<small>' . $cap . '</small>'; }; ?>
 						<img class="full" src="<? echo $url ?>" alt="<? echo $alt ?>">
-					<? } else { ?>
+					<? } else {
+						if($cap) { echo '<small>' . $cap . '</small>'; }; ?>
 						<img class="not-full" src="<? echo $url ?>" alt="<? echo $alt ?>" width="<? echo $svg ?>">
 					<? };
 				endwhile;
@@ -165,11 +171,14 @@ if(get_field('wrap_up_headline')) :
 					$img = get_sub_field('image');
 					$url = $img['url'];
 					$alt = $img['alt'];
+					$cap = $img['caption'];
 					$svg = get_sub_field('svg_width');
 
-					if(get_sub_field('full-width')) { ?>
+					if(get_sub_field('full-width')) {
+						if($cap) { echo '<small>' . $cap . '</small>'; }; ?>
 						<img class="full" src="<? echo $url ?>" alt="<? echo $alt ?>">
-					<? } else { ?>
+					<? } else {
+						if($cap) { echo '<small>' . $cap . '</small>'; }; ?>
 						<img class="not-full" src="<? echo $url ?>" alt="<? echo $alt ?>" width="<? echo $svg ?>">
 					<? };
 				endwhile;
@@ -183,7 +192,7 @@ if(get_field('wrap_up_headline')) :
 
 <section class="end">
 	<div class="wrapper">
-		<a class="btn" href="<? echo get_page_link(9); ?>">See More <strong>Work</strong> We've Done</a>
+		<a class="btn" href="<? echo get_page_link(115); ?>">See More <strong>Work</strong> We've Done</a>
 	</div>
 </section><!-- // .portfolio -->
 

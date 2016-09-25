@@ -52,36 +52,35 @@ get_template_part( 'template-parts/banner' );
 			<p><? the_field('portfolio-content'); ?></p>
 			<? 
 			// Get Projects Categorized as Featured
-			$args = array('post_type' => 'work', 'cat' => 9);
+			$args = array('post_type' => 'work', 'taxonomy' => 'featured');
 			$loop = new WP_Query( $args );
 
-			echo '<div class="grid">';
+			echo '<div id="portfolio" class="grid">';
 
 				while ( $loop->have_posts() ) : $loop->the_post(); ?>
-					<a class="grid-1-3 square" href="<? echo get_permalink(); ?>"><? echo get_the_post_thumbnail( $post_id, 'thumbnail', array( 'class' => 'bg' ) ); ?></a>
+					<a class="grid-1-3 square" href="<? echo get_permalink(); ?>"><div class="text"><span><? echo the_title(); ?></span></div><? echo get_the_post_thumbnail( $post_id, 'thumbnail', array( 'class' => 'bg' ) ); ?></a>
 				<? endwhile;
+				
+				wp_reset_query();
 
 			echo '</div>';
 			?>
-			<a class="btn" href="<?php echo get_page_link(9); ?>">Our Work</a>
+			<a class="btn" href="<?php echo get_page_link(115); ?>">Our Work</a>
 		</div>
 	</section>
 <? endif; ?>
 <section class="no-padding">
-	<img src="<?php bloginfo('template_directory');?>/img/fifty3-home-group.gif" alt="Fifty3 Team on Mountain" width="100%">
+	<img src="<? bloginfo('template_directory');?>/img/fifty3-home-group.gif" alt="Fifty3 Team on Mountain" width="100%">
 </section>
-<section class="form">
-	<div class="wrapper">
-		<h2>10 Ways to <strong>Grow Your Brand</strong> in Ways That Others Aren’t</h2>
-		<p>We’ll trade you. You send us your info and we’ll send you a free list detailing ways we’ve grown brands that you might not have considered yet.</p>
-		<div class="wpcf7">
-			<form>
-				<p><span><input type="text" name="name" placeholder="NAME"></span></p>
-				<p><span><input type="email" name="email" placeholder="EMAIL"></span></p>
-				<p><input class="btn" type="submit" name="submit" value="SUBMIT"></p>
-			</form>
+
+<? if( get_field('form-headline') ) : ?>
+	<section class="form">
+		<div class="wrapper">
+			<h2><? the_field('form-headline'); ?></h2>
+			<p><? the_field('form-content'); ?></p>
+			<? the_field('form'); ?>
 		</div>
-	</div>
-</section><!-- // .form -->
+	</section><!-- // .form -->
+<? endif; ?>
 
 <? get_footer(); ?>

@@ -20,23 +20,22 @@ section + section {
 
 // Section w/ video background and play button
 .video-bg {
-	background-color: $c-black;
-	background-size: cover;
-	min-height: 582px;
-	overflow: hidden;
 	position: relative;
+	padding: 0;
 
 	video {
-		bottom: -100%;
+		background-size: cover;
 		height: auto;
-		left: -100%;
-		position: absolute;
 		margin: auto;
-		min-height: 100%;
-		min-width: 100%;
-		right: -100%;
-		top: -100%;
-		width: auto;
+		width: 100%;
+
+		+ img {
+			display: none;
+		}
+	}
+
+	.wistia_click_to_play {
+		position: initial !important;
 	}
 
 	.play {
@@ -47,7 +46,7 @@ section + section {
 		margin: auto;
 		position: absolute;
 		right: 0;
-		top: 0;
+		top: -30px;
 		width: 90px;
 
 		img {
@@ -57,6 +56,17 @@ section + section {
 	}
 	h3 + .play {
 		margin-top: 0.3em;
+	}
+
+	@media screen and (max-width: $bp-m) {
+		video {
+			display: none;
+
+			+ img {
+				display: block;
+				max-width: 100%;
+			}
+		}
 	}
 }
 

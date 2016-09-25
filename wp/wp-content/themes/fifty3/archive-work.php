@@ -11,13 +11,17 @@ get_template_part( 'template-parts/banner' ); ?>
 <!-- while ( have_posts() ) : the_post(); ?> -->
 
 <section class="video-bg">
-	<video autoplay muted loop>
-		<source src="<?php bloginfo('template_directory');?>/video/fifty3_in_53_seconds-no_audio.mp4" type="video/mp4">
-		<!-- <source src="http://3yq63w3tvb6c1innxc1hzsya.wpengine.netdna-cdn.com/wp-content/uploads/2015/06/saastr_event_bg_2016.ogv" type="application/ogg">
-		<source src="http://3yq63w3tvb6c1innxc1hzsya.wpengine.netdna-cdn.com/wp-content/uploads/2015/06/saastr_event_bg_2016.webm" type="application/webm"> -->
-		<img src="<?php bloginfo('template_directory');?>/img/fifty3-work-video-placeholder.jpg">
+	<video id="auto-video" autoplay loop muted style="background-image: url('<? bloginfo('template_directory'); ?>/img/fifty3-work-video-placeholder.jpg');">
+		<source src="<? bloginfo('template_directory'); ?>/video/fifty3_in_53_seconds-no_audio.webm" type="application/webm">
+		<source src="<? bloginfo('template_directory'); ?>/video/fifty3_in_53_seconds-no_audio.mp4" type="video/mp4">
+		<source src="<? bloginfo('template_directory'); ?>/video/fifty3_in_53_seconds-no_audio.ogv" type="video/ogv">
 	</video>
-	<a class="play" href="https://embed-ssl.wistia.com/flash/embed_player_v2.0.swf?videoUrl=https://embed-ssl.wistia.com/deliveries/42020421534d85065e0f592e15785a56c0f996f1.bin&amp;stillUrl=https://embed-ssl.wistia.com/deliveries/96adf8fe38504a1a59d4f779a540d80b5534c0f4.bin&amp;controlsVisibleOnLoad=false&amp;unbufferedSeek=true&amp;autoLoad=false&amp;autoPlay=true&amp;endVideoBehavior=default&amp;embedServiceURL=http://distillery.wistia.com/x&amp;accountKey=wistia-production_462914&amp;mediaID=wistia-production_21665507&amp;mediaDuration=56.252&amp;fullscreenDisabled=false" data-featherlight="iframe"><img src="<?php bloginfo('template_directory');?>/img/fifty3-btn-play.svg" alt="Play"></a>
+	<img src="<? bloginfo('template_directory'); ?>/img/fifty3-work-video-placeholder.jpg">
+	<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+	<div id="wistia-container" class="wistia_embed wistia_async_ntj3nh0g96 popover=true popoverContent=html"
+	style="display:inline-block; white-space:nowrap;">
+		<a class="play" href="#"><img src="<?php bloginfo('template_directory');?>/img/fifty3-btn-play.svg" alt="Play"></a>
+	</div>
 </section>
 <section class="portfolio">
 	<div class="wrapper">

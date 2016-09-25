@@ -40,6 +40,23 @@ add_filter('upload_mimes', 'cc_mime_types');
 
 function custom_post_type() {
 
+	// Set UI labels for Custom Post Type
+	$labels = array(
+		'name'                => _x( 'Work', 'Post Type General Name', 'fifty3' ),
+		'singular_name'       => _x( 'Project', 'Post Type Singular Name', 'fifty3' ),
+		'menu_name'           => __( 'Work', 'fifty3' ),
+		'parent_item_colon'   => __( 'Parent Project', 'fifty3' ),
+		'all_items'           => __( 'All Work', 'fifty3' ),
+		'view_item'           => __( 'View Project', 'fifty3' ),
+		'add_new_item'        => __( 'Add New Project', 'fifty3' ),
+		'add_new'             => __( 'Add New', 'fifty3' ),
+		'edit_item'           => __( 'Edit Project', 'fifty3' ),
+		'update_item'         => __( 'Update Project', 'fifty3' ),
+		'search_items'        => __( 'Search Project', 'fifty3' ),
+		'not_found'           => __( 'Not Found', 'fifty3' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'fifty3' ),
+	);
+
 	$args = array(
 		'label'               => __( 'Work', 'fifty3' ),
 		'description'         => __( 'Project examples', 'fifty3' ),
@@ -61,23 +78,6 @@ function custom_post_type() {
 		'capability_type'     => 'page',
 	);
 	register_post_type( 'work', $args );
-
-// Set UI labels for Custom Post Type
-	$labels = array(
-		'name'                => _x( 'Work', 'Post Type General Name', 'fifty3' ),
-		'singular_name'       => _x( 'Project', 'Post Type Singular Name', 'fifty3' ),
-		'menu_name'           => __( 'Work', 'fifty3' ),
-		'parent_item_colon'   => __( 'Parent Project', 'fifty3' ),
-		'all_items'           => __( 'All Work', 'fifty3' ),
-		'view_item'           => __( 'View Project', 'fifty3' ),
-		'add_new_item'        => __( 'Add New Project', 'fifty3' ),
-		'add_new'             => __( 'Add New', 'fifty3' ),
-		'edit_item'           => __( 'Edit Project', 'fifty3' ),
-		'update_item'         => __( 'Update Project', 'fifty3' ),
-		'search_items'        => __( 'Search Project', 'fifty3' ),
-		'not_found'           => __( 'Not Found', 'fifty3' ),
-		'not_found_in_trash'  => __( 'Not found in Trash', 'fifty3' ),
-	);
 
 }
 

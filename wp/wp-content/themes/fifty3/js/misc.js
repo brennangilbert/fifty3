@@ -43,6 +43,23 @@ function randomJoke() {
 };
 
 
+// Background Videos
+
+function bgVideos() {
+	window._wq = window._wq || [];
+	_wq.push({ id: "wistia-container", onReady: function(video) {
+		video.bind("play", function() {
+			// console.log("the video played!");
+			$('#auto-video').get(0).pause();
+		});
+		video.bind("pause", function() {
+			// console.log("The video was just paused!");
+			$('#auto-video').get(0).play();
+		});
+	}});
+};
+
+
 // Load functions
 
-window.onload = expandCollapse(), randomJoke();
+window.onload = expandCollapse(), randomJoke(), bgVideos();

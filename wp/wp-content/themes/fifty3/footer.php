@@ -25,9 +25,21 @@
 				<span>Denver, CO 80246</span>
 			</nav>
 			<nav class="social">
-				<a href="#"><i class="fa fa-facebook"></i><span>Facebook</span></a>
-				<a href="#"><i class="fa fa-instagram"></i><span>Instagram</span></a>
-				<a href="#"><i class="fa fa-twitter"></i><span>Twitter</span></a>
+				<?
+				$facebook = get_field('facebook_url', 'option');
+				$twitter = get_field('twitter_url', 'option');
+				$insta = get_field('instagram_url', 'option');
+				
+				if($facebook) {
+					echo '<a href="' . $facebook . '"><i class="fa fa-facebook"></i><span>Facebook</span></a>';
+				};
+				if($insta) {
+					echo '<a href="' . $insta . '"><i class="fa fa-instagram"></i><span>Instagram</span></a>';
+				};
+				if($twitter) {
+					echo '<a href="' . $twitter . '"><i class="fa fa-twitter"></i><span>Twitter</span></a>';
+				};
+				?>
 			</nav>
 		</div>
 	</footer>

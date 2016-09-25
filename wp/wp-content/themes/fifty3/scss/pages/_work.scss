@@ -4,10 +4,13 @@
 .post-type-archive-work {
 
 	// Menu highlight
-	@media screen and (min-width: $bp-m+1px) {
-		.menu-item-26 a {
-			color: $c-teal;
-			position: relative;
+	
+	.menu-item-26 a,
+	.menu-item-122 a {
+		color: $c-teal;
+		position: relative;
+
+		@media screen and (min-width: $bp-m+1px) {
 
 			&:before {
 				background: $c-teal;
@@ -128,6 +131,12 @@
 				margin-top: 0;
 			}
 		}
+	}
+
+	small {
+		display: block;
+		font-size: 18px;
+		margin: 3em 0 1.5em;
 	}
 
 	.wrap-up {

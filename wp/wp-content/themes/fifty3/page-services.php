@@ -12,12 +12,12 @@ get_template_part( 'template-parts/banner' );
 while ( have_posts() ) : the_post(); ?>
 
 <section class="video-bg">
-	<video autoplay muted loop>
-		<source src="<?php bloginfo('template_directory');?>/video/fifty3-services-drawing.mp4" type="video/mp4">
-		<!-- <source src="http://3yq63w3tvb6c1innxc1hzsya.wpengine.netdna-cdn.com/wp-content/uploads/2015/06/saastr_event_bg_2016.ogv" type="application/ogg">
-		<source src="http://3yq63w3tvb6c1innxc1hzsya.wpengine.netdna-cdn.com/wp-content/uploads/2015/06/saastr_event_bg_2016.webm" type="application/webm"> -->
-		<img src="<?php bloginfo('template_directory');?>/img/fifty3-services-video-placeholder.jpg">
+	<video id="auto-video" autoplay loop muted style="background-image: url('<? bloginfo('template_directory'); ?>/img/fifty3-services-video-placeholder.jpg');">
+		<source src="<? bloginfo('template_directory'); ?>/video/fifty3-services-drawing.webm" type="application/webm">
+		<source src="<? bloginfo('template_directory'); ?>/video/fifty3-services-drawing.mp4" type="video/mp4">
+		<source src="<? bloginfo('template_directory'); ?>/video/fifty3-services-drawing.ogv" type="video/ogv">
 	</video>
+	<img src="<? bloginfo('template_directory'); ?>/img/fifty3-services-video-placeholder.jpg">
 </section>
 <section class="service-details">
 	<div class="wrapper">

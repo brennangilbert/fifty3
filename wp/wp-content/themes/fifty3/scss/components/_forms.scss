@@ -72,3 +72,19 @@ form {
 		width: 100%;
 	}
 }
+
+
+.full-width .wpcf7 form.sent,
+form.sent {
+	p {
+		display: none;
+	}
+}
+div.wpcf7-mail-sent-ok {
+	background: url('../img/fifty3-contact-form-success@2x.png') no-repeat;
+    background-size: 100%;
+    border: none;
+    height: 300px;
+    text-align: left;
+    padding: 0;
+}

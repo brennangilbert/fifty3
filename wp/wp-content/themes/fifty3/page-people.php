@@ -32,7 +32,9 @@ while ( have_posts() ) : the_post(); ?>
 							<h4><? the_sub_field('name'); ?></h4>
 							<p><em><? the_sub_field('title'); ?></em></p>
 							<p><? the_sub_field('bio'); ?></p>
-							<a class="social" href="<? the_sub_field('linkedin_url'); ?>" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+							<? if(get_sub_field('linkedin_url')) { ?>
+								<a class="social" href="<? the_sub_field('linkedin_url'); ?>" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+							<? }; ?>
 							<button class="expand-close"></button>
 						</div>
 					</div>

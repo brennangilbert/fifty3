@@ -18,14 +18,9 @@ while ( have_posts() ) : the_post(); ?>
 	<div class="wrapper">
 		<h2><? the_field('form-headline'); ?></h2>
 		<p><? the_field('form-content'); ?></p>
-		<div class="wpcf7">
-			<form>
-				<p><span><input type="text" name="name" placeholder="NAME"></span></p>
-				<p><span><input type="email" name="email" placeholder="EMAIL"></span></p>
-				<p><span><textarea placeholder="MESSAGE"></textarea></span></p>
-				<p><input class="btn" type="submit" name="submit" value="SUBMIT"></p>
-			</form>
-		</div>
+		<? if(get_field('contact_form')) :
+			the_field('contact_form');
+		endif; ?>
 	</div>
 </section><!-- // .form -->
 <? if( have_rows('connection') ): ?>

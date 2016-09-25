@@ -84,7 +84,7 @@
 		bottom: 0;
 		color: $c-white;
 		left: 0;
-		padding: 15px 24px 12px 36px;
+		padding: 15px 24px 12px 15px;
 		position: absolute;
 		right: 0;
 		text-align: left;
@@ -118,7 +118,7 @@
 			bottom: 15px;
 			outline: none;
 			position: absolute;
-			right: 24px;
+			right: 15px;
 		}
 
 		&.show {
@@ -174,7 +174,7 @@
 		right: 40px;
 		text-align: center;
 		text-transform: uppercase;
-		top: 27px;
+		top: 0;
 		z-index: 2;
 
 		span {

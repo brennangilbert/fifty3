@@ -12,10 +12,12 @@ get_template_part( 'template-parts/banner' );
 while ( have_posts() ) : the_post(); ?>
 
 <section class="video-bg">
-	<video autoplay muted>
-		<source src="<?php bloginfo('template_directory');?>/video/fifty3-about-background-no_audio.webm" type="application/webm">
-		<img src="<?php bloginfo('template_directory');?>/img/fifty3-home-video-placeholder.jpg">
+	<video id="auto-video" autoplay loop muted style="background-image: url('<? bloginfo('template_directory'); ?>/img/fifty3-about-video-placeholder.jpg');">
+		<source src="<? bloginfo('template_directory'); ?>/video/fifty3-about-background-no_audio.webm" type="application/webm">
+		<source src="<? bloginfo('template_directory'); ?>/video/fifty3-about-background-no_audio.mp4" type="video/mp4">
+		<source src="<? bloginfo('template_directory'); ?>/video/fifty3-about-background-no_audio.ogv" type="video/ogv">
 	</video>
+	<img src="<? bloginfo('template_directory'); ?>/img/fifty3-about-video-placeholder.jpg">
 </section>
 <section>
 	<div class="wrapper">
@@ -93,7 +95,7 @@ while ( have_posts() ) : the_post(); ?>
 							<? if( have_rows('logos') ):
 								while( have_rows('logos') ): the_row();
 
-									echo '<div class="grid-1-4">';
+									echo '<div class="square grid-1-4">';
 
 									if( get_sub_field('logo') ) :
 
