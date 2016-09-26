@@ -65,15 +65,18 @@ while ( have_posts() ) : the_post(); ?>
 		if( the_field('menu-subhead') ) :
 			echo '<p>' . the_field('menu-subhead') . '</p>';
 		endif;
-		?>
 
-		<div class="wpcf7">
-			<form>
-				<p><span><input type="text" name="name" placeholder="NAME"></span></p>
-				<p><span><input type="email" name="email" placeholder="EMAIL"></span></p>
-				<p><input class="btn" type="submit" name="submit" value="SUBMIT"></p>
-			</form>
-		</div>
+		if( get_field('menu-form')) :
+			the_field('menu-form');
+		endif;
+		?>
+<!-- 			<div class="wpcf7">
+				<form>
+					<p><span><input type="text" name="name" placeholder="NAME"></span></p>
+					<p><span><input type="email" name="email" placeholder="EMAIL"></span></p>
+					<p><input class="btn" type="submit" name="submit" value="SUBMIT"></p>
+				</form>
+			</div> -->
 	</div>
 </section><!-- // .form -->
 <section class="no-padding">

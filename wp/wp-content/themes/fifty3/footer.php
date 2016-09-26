@@ -43,6 +43,7 @@
 			</nav>
 		</div>
 	</footer>
+	<?php the_field('footer_scripts', 'option'); ?>
 	<?php wp_footer(); ?>
 </body>
 </html>

@@ -15,6 +15,11 @@
 	<meta name="description" content="<? if ( $seo_descr ) { echo $seo_descr; } else { bloginfo( 'description' ); } ?>"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="author" content="<? the_author_meta('display_name', 1); ?>" />
+	<meta property="og:url" content="http://www.agencyfifty3.com" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="<? if ( $seo_title ) { echo $seo_title; } else { echo 'Check Out Agency Fifty3 in Denver, CO.'; } ?>" />
+	<meta property="og:description" content="<? if ( $seo_descr ) { echo $seo_descr; } else { bloginfo( 'description' ); } ?>" />
+	<!-- <meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" /> -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="pingback" href="<? bloginfo( 'pingback_url' ); ?>">
 	<title>
@@ -36,6 +41,7 @@
 		}
 		?>
 	</title>
+	<?php the_field('header_scripts', 'option'); ?>
 	<?php wp_head(); ?>
 </head>
 <body <? body_class() ?>>
