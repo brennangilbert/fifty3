@@ -15,7 +15,7 @@ if(is_page('home')) {?>
 			<div class="wrapper">
 				<?php the_field('banner_text'); ?>			
 				<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
-				<div id="wistia-container" class="wistia_embed wistia_async_fmno38fmqm popover=true popoverContent=html"
+				<div id="wistia-container" class="wistia_embed wistia_async_fmno38fmqm popover=true popoverContent=html popoverPreventScroll=true"
 				style="display:inline-block; white-space:nowrap;">
 					<a class="play" href="#"><img src="<?php bloginfo('template_directory');?>/img/fifty3-btn-play.svg" alt="Play"></a>
 				</div>
@@ -27,7 +27,15 @@ if(is_page('home')) {?>
 
 	<section class="banner">
 		<div class="wrapper">
-			<h2><?php the_field('headline', 115); ?></h2>
+			<?
+			// If localhost, then use different page ID
+			if ( stristr( $_SERVER['SERVER_NAME'], 'localhost' ) ) {
+				$headline = get_field('headline', 9);
+			} else {
+				$headline = get_field('headline', 115);
+			};
+			?>
+			<h2><? echo $headline; ?></h2>
 		</div>
 	</section><!-- // .banner -->
 

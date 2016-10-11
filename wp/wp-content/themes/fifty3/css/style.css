@@ -692,6 +692,8 @@ body > header {
   z-index: 10; }
   body > header .logo {
     float: left; }
+    body > header .logo a {
+      display: block; }
     body > header .logo svg {
       transition: all 500ms ease-in-out; }
       body > header .logo svg .letter {
@@ -931,21 +933,22 @@ footer.global {
     color: #FFF;
     display: inline-block;
     font-size: 0.65em;
+    line-height: 2;
     margin-top: 2em;
     text-transform: uppercase; }
   footer.global a {
     color: #FFF; }
-  footer.global svg + nav a:hover {
+  footer.global a + nav a:hover {
     text-decoration: underline; }
-  footer.global svg + nav a:after,
-  footer.global svg + nav span + span:before {
+  footer.global a + nav a:after,
+  footer.global a + nav span + span:before {
     color: #7EA8AD;
     content: "|";
     display: inline-block; }
-  footer.global svg + nav a:after {
+  footer.global a + nav a:after {
     margin-left: 8px;
     margin-right: 5px; }
-  footer.global svg + nav span + span:before {
+  footer.global a + nav span + span:before {
     margin-left: 5px;
     margin-right: 8px; }
   footer.global .social {
@@ -999,7 +1002,7 @@ footer.global {
   .home .play {
     height: 56px;
     position: relative;
-    top: 0;
+    top: 20px;
     width: 56px; }
   .home .wrapper {
     position: relative;
@@ -1009,6 +1012,8 @@ footer.global {
     margin-right: auto;
     max-width: 650px; }
 
+.page-about .how-we-stand-above {
+  padding-bottom: 0; }
 .page-about .grid h4 {
   margin-bottom: 0; }
   .page-about .grid h4 + p {
@@ -1017,6 +1022,8 @@ footer.global {
   font-size: 0.8em; }
 .page-about .dark {
   padding: 180px 0; }
+.page-about .reasons {
+  padding-bottom: 0; }
 .page-about .reason-wrapper {
   margin: 4em auto 0;
   min-height: 230px;
@@ -1180,6 +1187,8 @@ footer.global {
     top: -30%;
     width: 100%;
     z-index: 0; }
+.single-work .solution {
+  padding-top: 0; }
 .single-work .laptop {
   position: relative;
   z-index: 1; }

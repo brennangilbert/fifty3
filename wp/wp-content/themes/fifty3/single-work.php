@@ -192,7 +192,16 @@ if(get_field('wrap_up_headline')) :
 
 <section class="end">
 	<div class="wrapper">
-		<a class="btn" href="<? echo get_page_link(115); ?>">See More <strong>Work</strong> We've Done</a>
+		<?
+		// Exclude Uncategorized and Featured based on Local vs Live
+		if ( stristr( $_SERVER['SERVER_NAME'], 'localhost' ) ) {
+			$btnlink = get_page_link(9);
+		} else {
+			$btnlink = get_page_link(115);
+		};
+		$trimmed = rtrim($btnlink, '/');
+		?>
+		<a class="btn" href="<? echo $trimmed; ?>#portfolio-section">See More <strong>Work</strong> We've Done</a>
 	</div>
 </section><!-- // .portfolio -->
 

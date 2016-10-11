@@ -19,6 +19,7 @@ footer.global {
 		color: $c-white;
 		display: inline-block;
 		font-size: 0.65em;
+		line-height: 2;
 		margin-top: 2em;
 		text-transform: uppercase;
 	}
@@ -26,7 +27,7 @@ footer.global {
 		color: $c-white;
 	}
 
-	svg + nav {
+	a + nav {
 		a:hover {
 			text-decoration: underline;
 		}

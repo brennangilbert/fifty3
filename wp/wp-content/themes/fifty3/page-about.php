@@ -12,14 +12,14 @@ get_template_part( 'template-parts/banner' );
 while ( have_posts() ) : the_post(); ?>
 
 <section class="video-bg">
-	<video id="auto-video" autoplay loop muted style="background-image: url('<? bloginfo('template_directory'); ?>/img/fifty3-about-video-placeholder.jpg');">
+	<video id="auto-video" autoplay muted style="background-image: url('<? bloginfo('template_directory'); ?>/img/fifty3-about-video-placeholder.jpg');">
 		<source src="<? bloginfo('template_directory'); ?>/video/fifty3-about-background-no_audio.webm" type="application/webm">
 		<source src="<? bloginfo('template_directory'); ?>/video/fifty3-about-background-no_audio.mp4" type="video/mp4">
 		<source src="<? bloginfo('template_directory'); ?>/video/fifty3-about-background-no_audio.ogv" type="video/ogv">
 	</video>
 	<img src="<? bloginfo('template_directory'); ?>/img/fifty3-about-video-placeholder.jpg">
 </section>
-<section>
+<section class="how-we-stand-above">
 	<div class="wrapper">
 		<h2><?php the_field('d-headline'); ?></h2>
 		<? if( have_rows('reasons') ): ?>
@@ -61,12 +61,12 @@ while ( have_posts() ) : the_post(); ?>
 				<? while ( have_rows('53-reasons') ) : the_row(); ?>
 					<?
 					if( get_sub_field('image') ) $i++;
-					$image = get_sub_field('image');
-					$url = $image['url'];
-					$alt = $image['alt'];
-					$count = $i;
+						$image = get_sub_field('image');
+						$url = $image['url'];
+						$alt = $image['alt'];
+						$count = $i;
 					?>
-					<div class="reason">
+					<div class="reason not-shown" style="display: none;">
 						<img src="<? echo $url; ?>" alt="<? echo $alt; ?>" width="64px" height="64px">
 						<p><strong>Reason #<? echo $count; ?>:</strong> <? the_sub_field('content'); ?></p>
 					</div>
@@ -140,7 +140,14 @@ while ( have_posts() ) : the_post(); ?>
 				</div>
 			<? endif; ?>
 		</div><!-- // .clients -->
-		<a class="btn" href="<? echo get_page_link(9); ?>">See Examples of the <strong>Work</strong> We've Done</a>
+		<?
+		if ( stristr( $_SERVER['SERVER_NAME'], 'localhost' ) ) {
+			$btnlink = get_page_link(9);
+		} else {
+			$btnlink = get_page_link(115);
+		};
+		?>
+		<a class="btn" href="<? echo $btnlink; ?>">See Examples of the <strong>Work</strong> We've Done</a>
 	</div><!-- // .wrapper -->
 </section><!-- // .map -->
 

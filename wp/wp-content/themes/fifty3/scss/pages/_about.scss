@@ -1,6 +1,9 @@
 // About page
 
 .page-about {
+	.how-we-stand-above {
+		padding-bottom: 0;
+	}
 	.grid {
 		h4 {
 			margin-bottom: 0;
@@ -17,7 +20,9 @@
 	.dark {
 		padding: 180px 0;
 	}
-	
+	.reasons {
+		padding-bottom: 0;
+	}
 	.reason-wrapper {
 		margin: 4em auto 0;
 		min-height: 230px;

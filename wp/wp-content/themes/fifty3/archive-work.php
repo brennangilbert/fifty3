@@ -18,21 +18,35 @@ get_template_part( 'template-parts/banner' ); ?>
 	</video>
 	<img src="<? bloginfo('template_directory'); ?>/img/fifty3-work-video-placeholder.jpg">
 	<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
-	<div id="wistia-container" class="wistia_embed wistia_async_ntj3nh0g96 popover=true popoverContent=html"
+	<div id="wistia-container" class="wistia_embed wistia_async_ntj3nh0g96 popover=true popoverContent=html popoverPreventScroll=true"
 	style="display:inline-block; white-space:nowrap;">
 		<a class="play" href="#"><img src="<?php bloginfo('template_directory');?>/img/fifty3-btn-play.svg" alt="Play"></a>
 	</div>
 </section>
-<section class="portfolio">
+<section class="portfolio" id="portfolio-section">
 	<div class="wrapper">
 		<nav class="filter">
-			<button class="active btn fil-cat" href="" data-rel="all">All</button>
-			<button class="btn fil-cat" data-rel="brand-identity">Brand Identity</button>
-			<button class="btn fil-cat" data-rel="design">Design</button>
-			<button class="btn fil-cat" data-rel="digital-case-study">Digital Case Study</button>
-			<button class="btn fil-cat" data-rel="photography-videography">Photography/Videography</button>
-			<button class="btn fil-cat" data-rel="strategy">Strategy</button>
-			<button class="btn fil-cat" data-rel="website">Website</button>
+			<button class="active btn fil-cat" data-rel="all">All</button>
+			<?
+			// Exclude Uncategorized and Featured based on Local vs Live
+			if ( stristr( $_SERVER['SERVER_NAME'], 'localhost' ) ) {
+				$exclusions = '1 9';
+			} else {
+				$exclusions = '1 5';
+			};
+			$terms = get_terms( array(
+			    'taxonomy' => 'category',
+			    'exclude' => $exclusions
+			) );
+			                         
+			if ( $terms && ! is_wp_error( $terms ) ) :
+			 
+			    foreach ( $terms as $term ) {
+			        echo '<button class="btn fil-cat" data-rel="' . $term->slug . '">' . $term->name . '</button>';
+			    }
+			 
+			endif;
+			?>
 		</nav>
 		<? 
 		// Get Projects
