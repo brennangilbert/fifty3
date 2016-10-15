@@ -1068,11 +1068,16 @@ footer.global {
   @media screen and (max-width: 320px) {
     .page-about #map {
       height: 180px; } }
+.page-about .state-info .grid {
+  justify-content: center; }
 .page-about .state-info .square {
   background: none; }
   .page-about .state-info .square:hover img {
     -webkit-filter: grayscale(0%);
     filter: grayscale(0%); }
+.page-about .state-info a {
+  display: block;
+  height: 100%; }
 .page-about .state-info img {
   bottom: 0;
   -webkit-filter: grayscale(100%);
@@ -1088,7 +1093,6 @@ footer.global {
 .page-about .state-info > div {
   display: none; }
 .page-about .clients {
-  margin-top: 130px;
   text-align: left; }
   .page-about .clients h3 {
     color: #414042;
@@ -1106,7 +1110,25 @@ footer.global {
     padding-left: 0; }
   .page-about .clients .client-state {
     margin-bottom: 1.5em; }
+  @media screen and (min-width: 760px) {
+    .page-about .clients .grid {
+      flex-direction: column;
+      max-height: 1200px; }
+      .page-about .clients .grid .client-state {
+        padding: 0; } }
 
+.page-people .team .square {
+  overflow: hidden; }
+  .page-people .team .square video {
+    display: none;
+    width: 180%;
+    position: absolute;
+    left: -50%;
+    right: 0;
+    top: 0;
+    bottom: 0; }
+  .page-people .team .square:hover video {
+    display: block; }
 .page-people .jokes {
   padding-top: 0; }
   .page-people .jokes #joke {
@@ -1115,6 +1137,10 @@ footer.global {
   .page-people .jokes button {
     margin-top: 0.75em;
     outline: none; }
+.page-people .primary-color .grid {
+  margin-bottom: 0; }
+.page-people .primary-color + section .btn {
+  margin-top: 0; }
 
 .page-services .grid h4 {
   font-family: "Greycliff CF Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1128,6 +1154,8 @@ footer.global {
     display: inline-block; }
 .page-services .square ul {
   display: none; }
+.page-services .form {
+  padding-top: 0; }
 .page-services .list-links {
   padding: 20px 0 22px;
   position: relative; }
@@ -1145,6 +1173,8 @@ footer.global {
     top: 0; }
   .page-services .list-links:after {
     bottom: 0; }
+.page-services .no-padding + section .btn {
+  margin-top: 0; }
 
 .post-type-archive-work .menu-item-26 a,
 .post-type-archive-work .menu-item-122 a {
@@ -1162,6 +1192,8 @@ footer.global {
       right: 15px;
       top: -30px; } }
 
+.single-work .tag.featured {
+  display: none; }
 .single-work .computer {
   padding-top: 0;
   position: relative; }
@@ -1266,6 +1298,9 @@ footer.global {
   padding-top: 0; }
   .single-work .end .btn {
     margin-top: 0; }
+
+.page-contact .contact-social {
+  padding-top: 0; }
 
 .grid {
   display: -webkit-flex;

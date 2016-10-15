@@ -49,6 +49,7 @@ $(document).ready(function() {
 			$("#map > svg > path").each(function(){
 				$(this).css('fill', '');
 			});
+			// Change this into an array so as to allow editing in WP
 			if( (data.name == 'AL') || (data.name == 'AZ') || (data.name == 'CA') || (data.name == 'CO') || (data.name == 'FL') || (data.name == 'GA') || (data.name == 'ID') || (data.name == 'IL') || (data.name == 'IN') || (data.name == 'LA') || (data.name == 'MA') || (data.name == 'MD') || (data.name == 'MN') || (data.name == 'MO') || (data.name == 'MS') || (data.name == 'NC') || (data.name == 'OK') || (data.name == 'TX') || (data.name == 'WI') ) {
 				$('#' + data.name).css('fill', '#7FA7AC');
 				$('.state-info > div').hide();

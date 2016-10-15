@@ -29,6 +29,12 @@
 
 // Single Projects (Single View)
 .single-work {
+
+	// Hide featured tag on Single projects
+	.tag.featured {
+		display: none;
+	}
+
 	.computer {
 		padding-top: 0;
 		position: relative;

@@ -1,6 +1,26 @@
 // People page specific styles
 
 .page-people {
+	.team {
+		.square {
+			overflow: hidden;
+			video {
+				display: none;
+				width: 180%;
+			    position: absolute;
+			    left: -50%;
+			    right: 0;
+			    top: 0;
+			    bottom: 0;
+			}
+
+			&:hover {
+				video {
+					display: block;
+				}
+			}
+		}
+	}
 	.jokes {
 		padding-top: 0;
 		
@@ -12,6 +32,15 @@
 		button {
 			margin-top: 0.75em;
 			outline: none;
+		}
+	}
+	.primary-color {
+		.grid {
+			margin-bottom: 0;
+		}
+
+		+ section .btn {
+			margin-top: 0;
 		}
 	}
 }

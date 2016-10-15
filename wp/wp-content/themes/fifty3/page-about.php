@@ -6,6 +6,13 @@
 
 get_header();
 
+// Links Local vs Live
+if ( stristr( $_SERVER['SERVER_NAME'], 'localhost' ) ) {
+	$work_link = get_page_link(9);
+} else {
+	$work_link = get_page_link(115);
+};
+
 /* Show Banner */
 get_template_part( 'template-parts/banner' );
 
@@ -92,25 +99,34 @@ while ( have_posts() ) : the_post(); ?>
 						<h3><? echo $label ?></h3>
 						<div class="grid">
 
-							<? if( have_rows('logos') ):
+							<?
+							if( have_rows('logos') ):
 								while( have_rows('logos') ): the_row();
-
-									echo '<div class="square grid-1-4">';
-
+									
 									if( get_sub_field('logo') ) :
 
 										$image = get_sub_field('logo');
 										$url = $image['url'];
 										$alt = $image['alt'];
 
-										echo '<img src="' . $url . '" alt="' . $alt . '">';
+										// If a portfolio project exists, link to it, otherwise link to the Work page
+										$project = get_sub_field('link_to_project');
+										$link = $work_link;
+
+										if( $project ) {
+											$link = get_permalink($project->ID);
+										};
+
+										echo '<div class="square grid-1-4">';
+											echo '<a href="' . $link . '"><img src="' . $url . '" alt="' . $alt . '"></a>';
+										echo '</div>';
 
 									endif;
-								
-									echo '</div>';
 
 								endwhile;
-							endif; ?>
+								echo $counter;
+							endif;
+							?>
 
 						</div><!-- // .grid -->
 					</div>
@@ -140,14 +156,7 @@ while ( have_posts() ) : the_post(); ?>
 				</div>
 			<? endif; ?>
 		</div><!-- // .clients -->
-		<?
-		if ( stristr( $_SERVER['SERVER_NAME'], 'localhost' ) ) {
-			$btnlink = get_page_link(9);
-		} else {
-			$btnlink = get_page_link(115);
-		};
-		?>
-		<a class="btn" href="<? echo $btnlink; ?>">See Examples of the <strong>Work</strong> We've Done</a>
+		<a class="btn" href="<? echo $work_link; ?>">See Examples of the <strong>Work</strong> We've Done</a>
 	</div><!-- // .wrapper -->
 </section><!-- // .map -->
 

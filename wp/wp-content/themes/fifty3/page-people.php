@@ -26,8 +26,8 @@ while ( have_posts() ) : the_post(); ?>
 						$photo = get_sub_field('photo');
 						$url = $photo['url'];
 						$alt = $photo['alt'];
+						$video = get_sub_field('video');
 						?>
-						<img class="bg" src="<? echo $url ?>" alt="<? echo $alt ?>">
 						<div class="caption">
 							<h4><? the_sub_field('name'); ?></h4>
 							<p><em><? the_sub_field('title'); ?></em></p>
@@ -37,6 +37,23 @@ while ( have_posts() ) : the_post(); ?>
 							<? }; ?>
 							<button class="expand-close"></button>
 						</div>
+						<img class="bg" src="<? echo $url ?>" alt="<? echo $alt ?>">
+						<?
+						if( $video ) {
+						?>
+							<video loop muted>
+	      						<source src="<? echo $video; ?>" type="video/mp4">
+	      					</video>
+	      					<script>
+	      						var figure = $(".square").hover( hoverVideo, hideVideo );
+								function hoverVideo(e) {  
+								    $('video', this).get(0).play(); 
+								}
+								function hideVideo(e) {
+								    $('video', this).get(0).pause(); 
+								}
+	      					</script>
+      					<? }; ?>
 					</div>
 				<? endwhile; ?>
 			</div>
