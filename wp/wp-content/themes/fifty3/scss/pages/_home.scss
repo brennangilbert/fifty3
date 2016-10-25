@@ -1,0 +1,65 @@
+// Home page specific
+
+.home {
+	margin-top: 0;
+
+	.banner {
+		color: $c-white;
+		padding: 230px 0 180px;
+
+		&:after {
+			background: rgba(0,0,0,0.5);
+			bottom: 0;
+			content: "";
+			display: block;
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+	}
+	.video-bg {
+		background-color: $c-black;
+		min-height: 582px;
+		overflow: hidden;
+
+		video {
+			bottom: -100%;
+			height: auto;
+			left: -100%;
+			position: absolute;
+			margin: auto;
+			min-height: 100%;
+			min-width: 100%;
+			right: -100%;
+			top: -100%;
+			width: auto;
+		}
+
+		@media screen and (max-width: $bp-m) {
+			video {
+				display: initial;
+			}
+		}
+	}
+
+	.play {
+		height: 56px;
+		position: relative;
+		top: 20px;
+		width: 56px;
+	}
+
+	.wrapper {
+		position: relative;
+		z-index: 1;
+	}
+
+	.portfolio, .form {
+		h2, p {
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 650px;
+		}
+	}
+}

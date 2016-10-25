@@ -1,0 +1,156 @@
+// About page
+
+.page-about {
+	.how-we-stand-above {
+		padding-bottom: 0;
+	}
+	.grid {
+		h4 {
+			margin-bottom: 0;
+
+			+ p {
+				margin-top: 5px;
+			}
+		}
+		p {
+			font-size: 0.8em;
+		}
+	}
+
+	.dark {
+		padding: 180px 0;
+	}
+	.reasons {
+		padding-bottom: 0;
+	}
+	.reason-wrapper {
+		margin: 4em auto 0;
+		min-height: 230px;
+		position: relative;
+
+		&:before {
+			background: $c-white;
+			content: "";
+			display: block;
+			height: 40px;
+			left: 0;
+			margin: auto;
+			position: absolute;
+			right: 0;
+			top: -20px;
+			width: 106px;
+		}
+
+		> div {
+			border: 3px solid $c-black;
+			left: 20px;
+			margin: auto;
+			max-width: 750px;
+			padding: 0 20px 20px;
+			position: absolute;
+			right: 20px;
+			top: 0;
+		}
+
+		p {
+			@extend .emphasis;
+		}
+
+		img {
+			background-color: $c-white;
+			box-sizing: initial;
+			margin-top: -32px;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+		strong {
+			color: $c-black;
+			display: block;
+		}
+	}
+
+	#map {
+		height: 560px;
+
+		@media screen and (max-width: $bp-m) {
+			height: 450px;
+		}
+		@media screen and (max-width: $bp-s) {
+			height: 320px;
+		}
+		@media screen and (max-width: $bp-xs) {
+			height: 180px;
+		}
+	}
+
+	.state-info {
+		.grid {
+			justify-content: center;
+		}
+		.square {
+			background: none;
+
+			&:hover img {
+				-webkit-filter: grayscale(0%);
+				filter: grayscale(0%);
+			}
+		}
+		a {
+			display: block;
+			height: 100%;
+		}
+		img {
+			bottom: 0;
+			-webkit-filter: grayscale(100%);
+			filter: grayscale(100%);
+			left: 0;
+			margin: auto;
+			max-height: 100%;
+			max-width: 80%;
+			position: absolute;
+			right: 0;
+			transition: $transition;
+			top: 0;
+		}
+
+		> div {
+			display: none;
+		}
+	}
+	.clients {
+		text-align: left;
+
+		h3 {
+			color: $c-black;
+			font-family: $f-grey-med;
+			font-size: 1.5em;
+			font-weight: normal;
+			margin-bottom: 1em;
+		}
+		strong {
+			font-family: $f-grey-b;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		ul {
+			list-style: none;
+			margin-top: 0;
+			padding-left: 0;
+		}
+
+		.client-state {
+			margin-bottom: 1.5em;
+		}
+
+		@media screen and (min-width: $bp-l - 100px) {
+			.grid {
+				flex-direction: column;
+	    		max-height: 1200px;
+
+	    		.client-state {
+	    			padding: 0;
+	    		}
+			}
+		}
+	}
+}
