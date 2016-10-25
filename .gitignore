@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 static/video/fifty3-about-background-no_audio.webm
 static/video/fifty3-home-background-no_audio.mp4
 static/video/fifty3-home-background-no_audio.webm
@@ -319,3 +320,39 @@ wp/wp-content/plugins/send-pdf-for-contact-form-7/screenshot-2.png
 wp/wp-content/plugins/send-pdf-for-contact-form-7/screenshot-3.png
 wp/wp-content/plugins/send-pdf-for-contact-form-7/views/send-pdf-admin.php
 wp/wp-content/plugins/send-pdf-for-contact-form-7/wpcf7-send-pdf.php
+=======
+.htaccess
+.DS_Store
+Thumbs.db
+config.codekit
+/static
+.idea
+
+index.php
+README.md
+
+# wordpress specific
+wp-config.php
+wp-config-sample.php
+
+# wp core (as of 3.4.1)
+/wp/index.php
+/wp/license.txt
+/wp/readme.html
+/wp/wp-activate.php
+/wp/wp-blog-header.php
+/wp/wp-comments-post.php
+/wp/wp-cron.php
+/wp/wp-links-opml.php
+/wp/wp-load.php
+/wp/wp-login.php
+/wp/wp-mail.php
+/wp/wp-settings.php
+/wp/wp-signup.php
+/wp/wp-trackback.php
+/wp/xmlrpc.php
+/wp/wp-admin
+/wp/wp-includes
+/wp/wp-content/plugins/
+/wp/wp-content/uploads/
+>>>>>>> origin/ryanhelp
