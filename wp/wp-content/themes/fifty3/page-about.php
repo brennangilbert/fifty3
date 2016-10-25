@@ -19,54 +19,54 @@ get_template_part( 'template-parts/banner' );
 while ( have_posts() ) : the_post(); ?>
 
 <section class="video-bg">
-	<video id="auto-video" autoplay muted style="background-image: url('<? bloginfo('template_directory'); ?>/img/fifty3-about-video-placeholder.jpg');">
-		<source src="<? bloginfo('template_directory'); ?>/video/fifty3-about-background-no_audio.webm" type="application/webm">
-		<source src="<? bloginfo('template_directory'); ?>/video/fifty3-about-background-no_audio.mp4" type="video/mp4">
-		<source src="<? bloginfo('template_directory'); ?>/video/fifty3-about-background-no_audio.ogv" type="video/ogv">
+	<video id="auto-video" autoplay muted style="background-image: url('<?php bloginfo('template_directory'); ?>/img/fifty3-about-video-placeholder.jpg');">
+		<source src="<?php bloginfo('template_directory'); ?>/video/fifty3-about-background-no_audio.webm" type="application/webm">
+		<source src="<?php bloginfo('template_directory'); ?>/video/fifty3-about-background-no_audio.mp4" type="video/mp4">
+		<source src="<?php bloginfo('template_directory'); ?>/video/fifty3-about-background-no_audio.ogv" type="video/ogv">
 	</video>
-	<img src="<? bloginfo('template_directory'); ?>/img/fifty3-about-video-placeholder.jpg">
+	<img src="<?php bloginfo('template_directory'); ?>/img/fifty3-about-video-placeholder.jpg">
 </section>
 <section class="how-we-stand-above">
 	<div class="wrapper">
 		<h2><?php the_field('d-headline'); ?></h2>
-		<? if( have_rows('reasons') ): ?>
+		<?php if( have_rows('reasons') ): ?>
 			<div class="grid">
-				<? while ( have_rows('reasons') ) : the_row(); ?>
+				<?php while ( have_rows('reasons') ) : the_row(); ?>
 					<div class="grid-1-3">
-						<?
+						<?php
 						$icon = get_sub_field('icon');
 						$url = $icon['url'];
 						$alt = $icon['alt'];
 						?>
-						<img src="<? echo $url; ?>" alt="<? echo $alt; ?>" width="64px" height="64px">
-						<h4><? the_sub_field('headline'); ?></h4>
-						<p><? the_sub_field('description'); ?></p>
+						<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>" width="64px" height="64px">
+						<h4><?php the_sub_field('headline'); ?></h4>
+						<p><?php the_sub_field('description'); ?></p>
 					</div>
-				<? endwhile; ?>
+				<?php endwhile; ?>
 			</div>
-		<? endif; ?>
+		<?php endif; ?>
 	</div>
 </section>
-<? if(get_field('def-headline') || the_field('def-description') ) : ?>
+<?php if(get_field('def-headline') || the_field('def-description') ) : ?>
 	<section class="dark">
 		<div class="wrapper">
 			<h2><?php the_field('def-headline'); ?></h2>
 			<p><?php the_field('def-description'); ?></p>
 		</div>
 	</section>
-<? endif ?>
+<?php endif ?>
 <section class="reasons">
 	<div class="wrapper">
 		<h2><?php the_field('53-headline'); ?></h2>
-		<?
+		<?php
 		$rows = get_field('53-reasons');
 		$row_count = count($rows);
 		if( have_rows('53-reasons') ):
 			$i = 0;
 		?>
 			<div id="slideshow" class="reason-wrapper">
-				<? while ( have_rows('53-reasons') ) : the_row(); ?>
-					<?
+				<?php while ( have_rows('53-reasons') ) : the_row(); ?>
+					<?php
 					if( get_sub_field('image') ) $i++;
 						$image = get_sub_field('image');
 						$url = $image['url'];
@@ -74,12 +74,12 @@ while ( have_posts() ) : the_post(); ?>
 						$count = $i;
 					?>
 					<div class="reason not-shown" style="display: none;">
-						<img src="<? echo $url; ?>" alt="<? echo $alt; ?>" width="64px" height="64px">
-						<p><strong>Reason #<? echo $count; ?>:</strong> <? the_sub_field('content'); ?></p>
+						<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>" width="64px" height="64px">
+						<p><strong>Reason #<?php echo $count; ?>:</strong> <?php the_sub_field('content'); ?></p>
 					</div>
-				<? endwhile; ?>
+				<?php endwhile; ?>
 			</div>
-		<? endif; ?>
+		<?php endif; ?>
 	</div>
 </section>
 <section class="map">
@@ -87,19 +87,19 @@ while ( have_posts() ) : the_post(); ?>
 		<h2><?php the_field('map-headline'); ?></h2>
 		<p><?php the_field('map-content'); ?></p>
 		<div id="map"></div>
-		<? if( get_field('states') ): ?>
+		<?php if( get_field('states') ): ?>
 			<div class="state-info">
-				<? while ( has_sub_field('states') ) :
+				<?php while ( has_sub_field('states') ) :
 					$state = get_sub_field_object('state_name');
 					$value = get_sub_field('state_name');
 					$state_abbr = 'info-' . $value;
 					$label = $state['choices'][ $value ];
 				?>
-					<div id="<? echo $state_abbr ?>">
-						<h3><? echo $label ?></h3>
+					<div id="<?php echo $state_abbr ?>">
+						<h3><?php echo $label ?></h3>
 						<div class="grid">
 
-							<?
+							<?php
 							if( have_rows('logos') ):
 								while( have_rows('logos') ): the_row();
 									
@@ -130,36 +130,36 @@ while ( have_posts() ) : the_post(); ?>
 
 						</div><!-- // .grid -->
 					</div>
-				<? endwhile; ?>
+				<?php endwhile; ?>
 			</div><!-- // .state-info -->
-		<? endif; ?>
+		<?php endif; ?>
 		<div class="clients">
 			<h3><?php the_field('clients-headline'); ?></h3>
-			<? if( get_field('client-state') ): ?>
+			<?php if( get_field('client-state') ): ?>
 				<div class="grid">
-					<? while ( has_sub_field('client-state') ) :
+					<?php while ( has_sub_field('client-state') ) :
 						$state = get_sub_field_object('state');
 						$value = get_sub_field('state');
 						$label = $state['choices'][ $value ];
 					?>
 					<div class="grid-1-2 client-state">
-						<strong><? echo $label ?></strong>
-						<? if( have_rows('property') ):
+						<strong><?php echo $label ?></strong>
+						<?php if( have_rows('property') ):
 							echo '<ul>';
 							while( have_rows('property') ): the_row(); ?>
-								<li><? the_sub_field("name") ?> | <? the_sub_field("city") ?>, <? echo $value ?></li>
-							<? endwhile;
+								<li><?php the_sub_field("name") ?> | <?php the_sub_field("city") ?>, <?php echo $value ?></li>
+							<?php endwhile;
 							echo '</ul>';
 						endif; ?>
 					</div>
-					<? endwhile; ?>
+					<?php endwhile; ?>
 				</div>
-			<? endif; ?>
+			<?php endif; ?>
 		</div><!-- // .clients -->
-		<a class="btn" href="<? echo $work_link; ?>">See Examples of the <strong>Work</strong> We've Done</a>
+		<a class="btn" href="<?php echo $work_link; ?>">See Examples of the <strong>Work</strong> We've Done</a>
 	</div><!-- // .wrapper -->
 </section><!-- // .map -->
 
-<? endwhile;
+<?php endwhile;
 
 get_footer(); ?>

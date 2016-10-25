@@ -4,6 +4,7 @@
  *	Custom functions (for enhanced theme goodness)
  */
 
+define('ABOUT_PAGE_ID', 7);
 
 // Add support for menus
 register_nav_menus( array(
@@ -104,3 +105,7 @@ function theme_styles() {
 	wp_enqueue_style( 'master', get_template_directory_uri() . '/css/style.css', array(), '0.0.1' );
 }
 add_action( 'wp_enqueue_scripts', 'theme_styles' );
+
+
+// AJAX submissions
+include_once( TEMPLATEPATH . '/includes/ajax.php' );
