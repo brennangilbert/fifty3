@@ -11,46 +11,46 @@ get_template_part( 'template-parts/banner' );
 
 ?>
 
-<? if( have_rows('services') ) : ?>
+<?php if( have_rows('services') ) : ?>
 	<section>
 		<div class="wrapper grid">
-			<? while ( have_rows('services') ) : the_row(); ?>
+			<?php while ( have_rows('services') ) : the_row(); ?>
 				<div class="grid-1-3">
 					<?
 					$icon = get_sub_field('icon');
 					$url = $icon['url'];
 					$alt = $icon['alt'];
 					?>
-					<img src="<? echo $url ?>" alt="<? echo $alt ?>" width="64px" height="64px">
-					<h3><? the_sub_field('title') ?></h3>
-					<? if( have_rows('bullet_points') ) : ?>
+					<img src="<?php echo $url ?>" alt="<?php echo $alt ?>" width="64px" height="64px">
+					<h3><?php the_sub_field('title') ?></h3>
+					<?php if( have_rows('bullet_points') ) : ?>
 						<ul class="no-bullets">
-							<? while ( have_rows('bullet_points') ) : the_row(); ?>
-								<li><? the_sub_field('point') ?></li>
-							<? endwhile; ?>
+							<?php while ( have_rows('bullet_points') ) : the_row(); ?>
+								<li><?php the_sub_field('point') ?></li>
+							<?php endwhile; ?>
 						</ul>
-					<? endif; ?>
+					<?php endif; ?>
 				</div>
-			<? endwhile; ?>
+			<?php endwhile; ?>
 		</div>
 		<a class="btn" href="<?php echo get_page_link(13); ?>">Our Services</a>
 	</section><!-- // .col-3 -->
-<? endif; ?>
-<? if( get_field('about-headline') ) : ?>
+<?php endif; ?>
+<?php if( get_field('about-headline') ) : ?>
 	<section class="dark">
 		<div class="wrapper">
-			<h2><? the_field('about-headline'); ?></h2>
-			<p><? the_field('about-content'); ?></p>
+			<h2><?php the_field('about-headline'); ?></h2>
+			<p><?php the_field('about-content'); ?></p>
 			<a class="btn" href="<?php echo get_page_link(7); ?>">About Us</a>
 		</div>
 	</section>
-<? endif; ?>
-<? if( get_field('portfolio-headline') ) : ?>
+<?php endif; ?>
+<?php if( get_field('portfolio-headline') ) : ?>
 	<section class="portfolio">
 		<div class="wrapper">
-			<h2><? the_field('portfolio-headline'); ?></h2>
-			<p><? the_field('portfolio-content'); ?></p>
-			<? 
+			<h2><?php the_field('portfolio-headline'); ?></h2>
+			<p><?php the_field('portfolio-content'); ?></p>
+			<?php 
 			// Get Projects Categorized as Featured
 			$args = array('post_type' => 'work', 'taxonomy' => 'featured');
 			$loop = new WP_Query( $args );
@@ -58,8 +58,8 @@ get_template_part( 'template-parts/banner' );
 			echo '<div id="portfolio" class="grid">';
 
 				while ( $loop->have_posts() ) : $loop->the_post(); ?>
-					<a class="grid-1-3 square" href="<? echo get_permalink(); ?>"><div class="text"><span><? echo the_title(); ?></span></div><? echo get_the_post_thumbnail( $post_id, 'thumbnail', array( 'class' => 'bg' ) ); ?></a>
-				<? endwhile;
+					<a class="grid-1-3 square" href="<?php echo get_permalink(); ?>"><div class="text"><span><?php echo the_title(); ?></span></div><?php echo get_the_post_thumbnail( $post_id, 'thumbnail', array( 'class' => 'bg' ) ); ?></a>
+				<?php endwhile;
 				
 				wp_reset_query();
 
@@ -68,19 +68,19 @@ get_template_part( 'template-parts/banner' );
 			<a class="btn" href="<?php echo get_page_link(115); ?>">Our Work</a>
 		</div>
 	</section>
-<? endif; ?>
+<?php endif; ?>
 <section class="no-padding">
-	<img src="<? bloginfo('template_directory');?>/img/fifty3-home-group.gif" alt="Fifty3 Team on Mountain" width="100%">
+	<img src="<?php bloginfo('template_directory');?>/img/fifty3-home-group.gif" alt="Fifty3 Team on Mountain" width="100%">
 </section>
 
-<? if( get_field('form-headline') ) : ?>
+<?php if( get_field('form-headline') ) : ?>
 	<section class="form">
 		<div class="wrapper">
-			<h2><? the_field('form-headline'); ?></h2>
-			<p><? the_field('form-content'); ?></p>
-			<? the_field('form'); ?>
+			<h2><?php the_field('form-headline'); ?></h2>
+			<p><?php the_field('form-content'); ?></p>
+			<?php the_field('form'); ?>
 		</div>
 	</section><!-- // .form -->
-<? endif; ?>
+<?php endif; ?>
 
-<? get_footer(); ?>
+<?php get_footer(); ?>

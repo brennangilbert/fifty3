@@ -5,25 +5,25 @@
  */
 ?>
 <!DOCTYPE html>
-<html <? language_attributes(); ?>>
+<html <?php language_attributes(); ?>>
 <head>
-	<?
+	<?php
 	$seo_title	= get_field( 'seo_title' );
 	$seo_descr	= get_field( 'seo_description' );
 	?>
-	<meta charset="<? bloginfo( 'charset' ); ?>">
-	<meta name="description" content="<? if ( $seo_descr ) { echo $seo_descr; } else { bloginfo( 'description' ); } ?>"/>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="description" content="<?php if ( $seo_descr ) { echo $seo_descr; } else { bloginfo( 'description' ); } ?>"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="author" content="<? the_author_meta('display_name', 1); ?>" />
+	<meta name="author" content="<?php the_author_meta('display_name', 1); ?>" />
 	<meta property="og:url" content="http://www.agencyfifty3.com" />
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content="<? if ( $seo_title ) { echo $seo_title; } else { echo 'Check Out Agency Fifty3 in Denver, CO.'; } ?>" />
-	<meta property="og:description" content="<? if ( $seo_descr ) { echo $seo_descr; } else { bloginfo( 'description' ); } ?>" />
+	<meta property="og:title" content="<?php if ( $seo_title ) { echo $seo_title; } else { echo 'Check Out Agency Fifty3 in Denver, CO.'; } ?>" />
+	<meta property="og:description" content="<?php if ( $seo_descr ) { echo $seo_descr; } else { bloginfo( 'description' ); } ?>" />
 	<!-- <meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" /> -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-	<link rel="pingback" href="<? bloginfo( 'pingback_url' ); ?>">
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<title>
-		<?
+		<?php
 		if ( $seo_title ) {
 			echo $seo_title;
 		} elseif ( is_post_type_archive('work') ) {
@@ -51,10 +51,10 @@
 	<?php the_field('header_scripts', 'option'); ?>
 	<?php wp_head(); ?>
 </head>
-<body <? body_class() ?>>
+<body <?php body_class() ?>>
 	<header <?php if( !is_page('home') ) : ?> class="normal" <?php endif; ?>>
 		<div class="logo">
-			<a href="<? echo home_url(); ?>">
+			<a href="<?php echo home_url(); ?>">
 				<svg id="d88fd625-2acf-4e30-ba58-384219f72ce1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 95" width="108" height="95">
 					<title>Fifty3 Logo</title>
 					<path d="M86.82,50.11a2.28,2.28,0,0,1,2,2.4c.06,1.53.06,3.07,0,4.61a3.55,3.55,0,0,1-1.87,3.24,4.45,4.45,0,0,1-1.85.48,8.66,8.66,0,0,1-3-.21,3.24,3.24,0,0,1-2.45-2.86c-.16-1.25-.13-2.52-.19-3.8h2.69c0,.1,0,.22,0,.33,0,.89,0,1.79.08,2.68a1.55,1.55,0,0,0,1.1,1.47,2.32,2.32,0,0,0,2.28-.32,1.69,1.69,0,0,0,.58-1.28c0-1.38,0-2.77,0-4.15a1.48,1.48,0,0,0-1.56-1.39c-.72,0-1.45,0-2.17,0h-.34V49h.41a22.17,22.17,0,0,0,2.28-.08,1.41,1.41,0,0,0,1.37-1.4,13.85,13.85,0,0,0,0-3.69,1.54,1.54,0,0,0-1.42-1.38,3.88,3.88,0,0,0-1.31,0,1.61,1.61,0,0,0-1.24,1.58c-.06.55,0,1.1-.06,1.65,0,.26,0,.52,0,.8H79.46a15.45,15.45,0,0,1,.24-3.8,3.24,3.24,0,0,1,2.36-2.34,7.36,7.36,0,0,1,4.35.06,3.15,3.15,0,0,1,2.3,2.87,36.05,36.05,0,0,1,0,4.57,2.18,2.18,0,0,1-1.25,2C87.28,50,87.07,50,86.82,50.11Z" style="fill:#7ea8ad"/>
@@ -74,6 +74,6 @@
 		</div>
 		<nav id="header-menu">
 			<div id="menu-close"><i class="fa fa-times"></i></div>
-			<? wp_nav_menu( array( 'menu_class' => 'main-nav', 'menu' => 'Main Menu' )); ?>
+			<?php wp_nav_menu( array( 'menu_class' => 'main-nav', 'menu' => 'Main Menu' )); ?>
 		</nav>
 	</header>

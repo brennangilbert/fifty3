@@ -9,8 +9,8 @@ if(is_page('home')) {?>
 	<section class="banner video-bg">
 		<?php while ( have_posts() ) : the_post(); ?>
 			<video id="auto-video" autoplay loop muted style="background-image: url('<? bloginfo('template_directory'); ?>/img/fifty3-home-video-placeholder.jpg');">
-				<source src="<? bloginfo('template_directory'); ?>/video/fifty3-home-background-no_audio.webm" type="application/webm">
-				<source src="<? bloginfo('template_directory'); ?>/video/fifty3-home-background-no_audio.mp4" type="video/mp4">
+				<source src="<?php bloginfo('template_directory'); ?>/video/fifty3-home-background-no_audio.webm" type="application/webm">
+				<source src="<?php bloginfo('template_directory'); ?>/video/fifty3-home-background-no_audio.mp4" type="video/mp4">
 			</video>
 			<div class="wrapper">
 				<?php the_field('banner_text'); ?>			
@@ -23,7 +23,7 @@ if(is_page('home')) {?>
 		<?php endwhile; ?>
 	</section><!-- // .banner -->
 
-<? } elseif(is_archive()) { ?>
+<?php } elseif(is_archive()) { ?>
 
 	<section class="banner">
 		<div class="wrapper">
@@ -35,11 +35,11 @@ if(is_page('home')) {?>
 				$headline = get_field('headline', 115);
 			};
 			?>
-			<h2><? echo $headline; ?></h2>
+			<h2><?php echo $headline; ?></h2>
 		</div>
 	</section><!-- // .banner -->
 
-<? } elseif(is_single()) { ?>
+<?php } elseif(is_single()) { ?>
 
 	<section class="banner">
 		<div class="wrapper">
@@ -49,7 +49,7 @@ if(is_page('home')) {?>
 		</div>
 	</section><!-- // .banner -->
 
-<? } else { ?>
+<?php } else { ?>
 
 <section class="banner">
 	<div class="wrapper">
@@ -59,4 +59,4 @@ if(is_page('home')) {?>
 	</div>
 </section><!-- // .banner -->
 
-<? }; ?>
+<?php }; ?>

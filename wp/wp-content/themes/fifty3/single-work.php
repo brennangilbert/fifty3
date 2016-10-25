@@ -23,7 +23,7 @@ if(get_field('video_project')) {
 
 	<section style="padding-top: 0;">
 		<div class="wrapper">
-			<? echo the_field('video_description');
+			<?php echo the_field('video_description');
 			foreach ($taxonomies as $taxonomy) {      
 
 		        $terms = get_the_terms( $post->ID, $taxonomy );
@@ -49,36 +49,36 @@ if(get_field('video_project')) {
 				<div style="padding-top: 110px;">
 					<div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
 						<div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
-							<div class="wistia_embed wistia_async_<? echo $wistia; ?> seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div>
+							<div class="wistia_embed wistia_async_<?php echo $wistia; ?> seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div>
 						</div>
 					</div>
 				</div>
-		    <? } ?>
+		    <?php } ?>
 		</div>
 	</section>
 
-<? } else {
+<?php } else {
 
 	if(get_field('main_image')) :
 	?>
 
 		<section class="no-padding">
-			<?
+			<?php
 			$main_image = get_field('main_image');
 			$url = $main_image['url'];
 			$alt = $main_image['alt'];
 			?>
-			<img src="<? echo $url ?>" alt="<? echo $alt ?>" style="height:auto;width:100%;">
+			<img src="<?php echo $url ?>" alt="<?php echo $alt ?>" style="height:auto;width:100%;">
 		</section>
 
-	<? endif;
+	<?php endif;
 	if(get_field('description')) :
 	?>
 
 	<section>
 		<div class="wrapper">
 			<h2>The Challenge</h2>
-			<?
+			<?php
 			echo the_field('description');
 
 			// Show custom post type categories
@@ -107,7 +107,7 @@ if(get_field('video_project')) {
 		</div>
 	</section>
 
-<? endif;
+<?php endif;
 
 // Computer Section
 if(get_field('computer_image')) :
@@ -115,7 +115,7 @@ if(get_field('computer_image')) :
 
 	<section class="computer">
 		<div class="wrapper">
-			<?
+			<?php
 			$stripe = get_field('computer_stripe_color');
 			$comp_img = get_field('computer_image');
 			$url = $comp_img['url'];
@@ -124,32 +124,32 @@ if(get_field('computer_image')) :
 			<div class="laptop">
 				<img src="<?php bloginfo('template_directory');?>/img/fifty3-laptop_mockup-bottom.svg" alt="laptop bottom">
 				<div class="screen">
-					<img src="<? echo $url ?>" alt="<? echo $alt ?>">
+					<img src="<?php echo $url ?>" alt="<?php echo $alt ?>">
 				</div>
 			</div>
 		</div>
-		<div class="stripe" style="background-color:<? echo $stripe ?>;"></div>
+		<div class="stripe" style="background-color:<?php echo $stripe ?>;"></div>
 		
-		<? if(get_field('project_website_url')) : ?>
-			<a class="btn" href="<? echo get_field('project_website_url'); ?>">Visit Website</a>
+		<?php if(get_field('project_website_url')) : ?>
+			<a class="btn" href="<?php echo get_field('project_website_url'); ?>">Visit Website</a>
 			<style>
-				.computer .btn {border-color:<? echo $stripe ?>;}
-				.computer .btn:hover {background-color:<? echo $stripe ?>;}
+				.computer .btn {border-color:<?php echo $stripe ?>;}
+				.computer .btn:hover {background-color:<?php echo $stripe ?>;}
 			</style>
-		<? endif; ?>
+		<?php endif; ?>
 
 	</section>
 
-<? endif;
+<?php endif;
 if(get_field('prep_description')) :
 ?>
 
 	<section class="preparation">
 		<div class="wrapper">
 			<h2>The Preparation</h2>
-			<? echo the_field('prep_description'); ?>
+			<?php echo the_field('prep_description'); ?>
 		</div>
-		<?
+		<?php
 		if(have_rows('prep_images')) :
 
 			echo '<div class="images">';
@@ -163,11 +163,11 @@ if(get_field('prep_description')) :
 
 					if(get_sub_field('full-width')) {
 						if($cap) { echo '<small>' . $cap . '</small>'; }; ?>
-						<img class="full" src="<? echo $url ?>" alt="<? echo $alt ?>">
-					<? } else {
+						<img class="full" src="<?php echo $url ?>" alt="<?php echo $alt ?>">
+					<?php } else {
 						if($cap) { echo '<small>' . $cap . '</small>'; }; ?>
-						<img class="not-full" src="<? echo $url ?>" alt="<? echo $alt ?>" width="<? echo $svg ?>">
-					<? };
+						<img class="not-full" src="<?php echo $url ?>" alt="<?php echo $alt ?>" width="<?php echo $svg ?>">
+					<?php };
 				endwhile;
 
 			echo '</div>';
@@ -175,16 +175,16 @@ if(get_field('prep_description')) :
 		endif; ?>
 	</section>
 
-<? endif;
+<?php endif;
 if(get_field('sol_description')) :
 ?>
 	
 	<section class="solution">
 		<div class="wrapper">
 			<h2>The Solution</h2>
-			<? echo the_field('sol_description'); ?>
+			<?php echo the_field('sol_description'); ?>
 		</div>
-		<?
+		<?php
 		if(have_rows('sol_images')) :
 
 			echo '<div class="images">';
@@ -198,11 +198,11 @@ if(get_field('sol_description')) :
 
 					if(get_sub_field('full-width')) {
 						if($cap) { echo '<small>' . $cap . '</small>'; }; ?>
-						<img class="full" src="<? echo $url ?>" alt="<? echo $alt ?>">
-					<? } else {
+						<img class="full" src="<?php echo $url ?>" alt="<?php echo $alt ?>">
+					<?php } else {
 						if($cap) { echo '<small>' . $cap . '</small>'; }; ?>
-						<img class="not-full" src="<? echo $url ?>" alt="<? echo $alt ?>" width="<? echo $svg ?>">
-					<? };
+						<img class="not-full" src="<?php echo $url ?>" alt="<?php echo $alt ?>" width="<?php echo $svg ?>">
+					<?php };
 				endwhile;
 
 			echo '</div>';
@@ -210,15 +210,15 @@ if(get_field('sol_description')) :
 		endif; ?>
 	</section>
 
-<? endif;
+<?php endif;
 if(get_field('wrap_up_headline')) :
 ?>
 
 	<section class="wrap-up">
 		<div class="wrapper">
-			<h2><? echo the_field('wrap_up_headline'); ?></h2>
+			<h2><?php echo the_field('wrap_up_headline'); ?></h2>
 		</div>
-		<?
+		<?php
 		if(have_rows('wrap_up_images')) :
 
 			echo '<div class="images">';
@@ -232,11 +232,11 @@ if(get_field('wrap_up_headline')) :
 
 					if(get_sub_field('full-width')) {
 						if($cap) { echo '<small>' . $cap . '</small>'; }; ?>
-						<img class="full" src="<? echo $url ?>" alt="<? echo $alt ?>">
-					<? } else {
+						<img class="full" src="<?php echo $url ?>" alt="<?php echo $alt ?>">
+					<?php } else {
 						if($cap) { echo '<small>' . $cap . '</small>'; }; ?>
-						<img class="not-full" src="<? echo $url ?>" alt="<? echo $alt ?>" width="<? echo $svg ?>">
-					<? };
+						<img class="not-full" src="<?php echo $url ?>" alt="<?php echo $alt ?>" width="<?php echo $svg ?>">
+					<?php };
 				endwhile;
 
 			echo '</div>';
@@ -244,13 +244,13 @@ if(get_field('wrap_up_headline')) :
 		endif; ?>
 	</section>
 
-<? endif;
+<?php endif;
 };
 ?>
 
 <section class="end">
 	<div class="wrapper">
-		<?
+		<?php
 		// Exclude Uncategorized and Featured based on Local vs Live
 		if ( stristr( $_SERVER['SERVER_NAME'], 'localhost' ) ) {
 			$btnlink = get_page_link(9);
@@ -259,10 +259,10 @@ if(get_field('wrap_up_headline')) :
 		};
 		$trimmed = rtrim($btnlink, '/');
 		?>
-		<a class="btn" href="<? echo $trimmed; ?>#portfolio-section">See More <strong>Work</strong> We've Done</a>
+		<a class="btn" href="<?php echo $trimmed; ?>#portfolio-section">See More <strong>Work</strong> We've Done</a>
 	</div>
 </section><!-- // .portfolio -->
 
-<? endwhile;
+<?php endwhile;
 
 get_footer(); ?>

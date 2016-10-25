@@ -16,33 +16,33 @@ while ( have_posts() ) : the_post(); ?>
 </section>
 <section class="team">
 	<div class="wrapper">
-		<h2><? the_field('team-headline'); ?></h2>
-		<p><? the_field('team-content'); ?></p>
-		<? if( have_rows('team_member') ): ?>
+		<h2><?php the_field('team-headline'); ?></h2>
+		<p><?php the_field('team-content'); ?></p>
+		<?php if( have_rows('team_member') ): ?>
 			<div class="grid">
-				<? while ( have_rows('team_member') ) : the_row(); ?>
+				<?php while ( have_rows('team_member') ) : the_row(); ?>
 					<div class="grid-1-3 square">
-						<?
+						<?php
 						$photo = get_sub_field('photo');
 						$url = $photo['url'];
 						$alt = $photo['alt'];
 						$video = get_sub_field('video');
 						?>
 						<div class="caption">
-							<h4><? the_sub_field('name'); ?></h4>
-							<p><em><? the_sub_field('title'); ?></em></p>
-							<p><? the_sub_field('bio'); ?></p>
-							<? if(get_sub_field('linkedin_url')) { ?>
-								<a class="social" href="<? the_sub_field('linkedin_url'); ?>" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-							<? }; ?>
+							<h4><?php the_sub_field('name'); ?></h4>
+							<p><em><?php the_sub_field('title'); ?></em></p>
+							<p><?php the_sub_field('bio'); ?></p>
+							<?php if(get_sub_field('linkedin_url')) { ?>
+								<a class="social" href="<?php the_sub_field('linkedin_url'); ?>" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+							<?php }; ?>
 							<button class="expand-close"></button>
 						</div>
-						<img class="bg" src="<? echo $url ?>" alt="<? echo $alt ?>">
-						<?
+						<img class="bg" src="<?php echo $url ?>" alt="<?php echo $alt ?>">
+						<?php
 						if( $video ) {
 						?>
 							<video loop muted>
-	      						<source src="<? echo $video; ?>" type="video/mp4">
+	      						<source src="<?php echo $video; ?>" type="video/mp4">
 	      					</video>
 	      					<script>
 	      						var figure = $(".square").hover( hoverVideo, hideVideo );
@@ -53,17 +53,17 @@ while ( have_posts() ) : the_post(); ?>
 								    $('video', this).get(0).pause(); 
 								}
 	      					</script>
-      					<? }; ?>
+      					<?php }; ?>
 					</div>
-				<? endwhile; ?>
+				<?php endwhile; ?>
 			</div>
-		<? endif; ?>
+		<?php endif; ?>
 	</div>
 </section><!-- // .team -->
 <section class="jokes">
 	<div class="wrapper">
-		<h2><? the_field('jokes-headline'); ?></h2>
-		<p><? the_field('jokes-content'); ?></p>
+		<h2><?php the_field('jokes-headline'); ?></h2>
+		<p><?php the_field('jokes-content'); ?></p>
 		<p id="joke">A steak pun is a rare medium well done.</p>
 		<button class="btn">Click Here to Chuckle</button>
 	</div>
@@ -90,10 +90,10 @@ while ( have_posts() ) : the_post(); ?>
 </section><!-- // .col-3 -->
 <section>
 	<div class="wrapper">
-		<a class="btn" href="<? echo get_page_link(15); ?>"><strong>Contact us</strong> for any inquiries, questions or jokes.</a>
+		<a class="btn" href="<?php echo get_page_link(15); ?>"><strong>Contact us</strong> for any inquiries, questions or jokes.</a>
 	</div>
 </section>
 
-<? endwhile;
+<?php endwhile;
 
 get_footer(); ?>

@@ -38,7 +38,7 @@ while ( have_posts() ) : the_post(); ?>
 			<button class="btn fil-cat" data-rel="strategy">Strategy</button>
 			<button class="btn fil-cat" data-rel="website">Website</button>
 		</nav>
-		<? 
+		<?php
 		// Get Projects
 		$args = array('post_type' => 'work');
 		$loop = new WP_Query( $args );
@@ -58,15 +58,15 @@ while ( have_posts() ) : the_post(); ?>
 				}
 
 			?>
-				<a class="grid-1-3 square scale-anm all <? echo $cats ?>" href="<? echo get_permalink(); ?>"><? echo get_the_post_thumbnail( $post_id, 'thumbnail', array( 'class' => 'bg' ) ); ?></a>
-			<? endwhile;
+				<a class="grid-1-3 square scale-anm all <?php echo $cats ?>" href="<?php echo get_permalink(); ?>"><?php echo get_the_post_thumbnail( $post_id, 'thumbnail', array( 'class' => 'bg' ) ); ?></a>
+			<?php endwhile;
 
 		echo '</div>';
 		?>
-		<a class="btn" href="<? echo get_page_link(11); ?>">Meet <strong>the Brains</strong> Behind the Ideas</a>
+		<a class="btn" href="<?php echo get_page_link(11); ?>">Meet <strong>the Brains</strong> Behind the Ideas</a>
 	</div>
 </section><!-- // .portfolio -->
 
-<? endwhile;
+<?php endwhile;
 
 get_footer(); ?>
