@@ -30,3 +30,5 @@ README.md
 /wp/wp-includes
 /wp/wp-content/plugins/
 /wp/wp-content/uploads/
+
+/wp/wp-content/themes/fifty3/scss/.sass-cache
