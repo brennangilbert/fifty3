@@ -24,16 +24,15 @@
 		overflow: hidden;
 
 		video {
-			bottom: -100%;
-			height: auto;
-			left: -100%;
 			position: absolute;
-			margin: auto;
-			min-height: 100%;
+			top: 50%;
+			left: 50%;
 			min-width: 100%;
-			right: -100%;
-			top: -100%;
+			min-height: 100%;
 			width: auto;
+			height: auto;
+			-webkit-transform: translateX(-50%) translateY(-50%);
+			transform: translateX(-50%) translateY(-50%);
 		}
 
 		@media screen and (max-width: $bp-m) {
