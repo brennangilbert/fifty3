@@ -22,7 +22,7 @@
 	}).always(function () {
 		$('#map').usmap({
 			showLabels: false,
-			stateStyles: {fill: '#383839', stroke: '#FFF'},
+			stateStyles: {cursor: 'default', fill: '#383839', stroke: '#FFF'},
 			stateHoverStyles: {fill: '#383839'},
 			stateSpecificStyles: activeStates,
 			stateSpecificHoverStyles: hoverStates,
@@ -31,7 +31,7 @@
 					$(this).css('fill', '');
 				});
 
-				if ($.inArray(data.name, states)) {
+				if ($.inArray(data.name, states) !== -1) {
 					$('#' + data.name).css('fill', '#7FA7AC');
 					$('.state-info > div').hide();
 					$('#info-' + data.name).show();
