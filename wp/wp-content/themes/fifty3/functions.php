@@ -5,6 +5,7 @@
  */
 
 define('ABOUT_PAGE_ID', 7);
+define('HOME_PAGE_ID', 105);
 
 // Add support for menus
 register_nav_menus( array(
@@ -107,8 +108,23 @@ function theme_styles() {
 add_action( 'wp_enqueue_scripts', 'theme_styles' );
 
 
-function action_wpcf7_mail_sent( $contact_form ) {
-	mail('ryan@gospotcheck.com', 'After mail sent', 'Yay, the action hook worked!');
+// Send follow up email with PDF download link after contact form submission
+function action_wpcf7_mail_sent($contact_form) {
+	$submission = WPCF7_Submission::get_instance();
+
+	// for home page submissions
+	if ( $submission && $contact_form->title == 'Home Page Form') {
+		$posted_data = $submission->get_posted_data();
+		$sender_email = $posted_data['your-email'];
+
+		$email_subject = get_field('form-email-subject', HOME_PAGE_ID);
+		$email_body = get_field('form-email-body', HOME_PAGE_ID);
+		$email_file_url = get_field('form-email-attachment', HOME_PAGE_ID);
+		$email_headers = array('Content-Type: text/html; charset=UTF-8', 'From: Agency Fifty3 <hello@agencyfifty3.com>');
+
+		wp_mail($sender_email, $email_subject, $email_body . '<br><br><a href="' . $email_file_url . '">Download PDF Here</a>', $email_headers);
+	}
+
 };
 
 // add the action
