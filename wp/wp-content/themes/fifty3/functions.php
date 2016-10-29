@@ -107,5 +107,13 @@ function theme_styles() {
 add_action( 'wp_enqueue_scripts', 'theme_styles' );
 
 
+function action_wpcf7_mail_sent( $contact_form ) {
+	mail('ryan@gospotcheck.com', 'After mail sent', 'Yay, the action hook worked!');
+};
+
+// add the action
+add_action( 'wpcf7_mail_sent', 'action_wpcf7_mail_sent', 10, 1 );
+
+
 // AJAX submissions
 include_once( TEMPLATEPATH . '/includes/ajax.php' );
