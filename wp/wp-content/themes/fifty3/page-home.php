@@ -16,7 +16,7 @@ get_template_part( 'template-parts/banner' );
 		<div class="wrapper grid">
 			<?php while ( have_rows('services') ) : the_row(); ?>
 				<div class="grid-1-3">
-					<?
+					<?php
 					$icon = get_sub_field('icon');
 					$url = $icon['url'];
 					$alt = $icon['alt'];

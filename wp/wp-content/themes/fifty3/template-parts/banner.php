@@ -27,7 +27,7 @@ if(is_page('home')) {?>
 
 	<section class="banner">
 		<div class="wrapper">
-			<?
+			<?php
 			// If localhost, then use different page ID
 			if ( stristr( $_SERVER['SERVER_NAME'], 'localhost' ) ) {
 				$headline = get_field('headline', 9);

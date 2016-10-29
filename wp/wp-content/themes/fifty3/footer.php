@@ -27,7 +27,7 @@
 				<span>Denver, CO 80246</span>
 			</nav>
 			<nav class="social">
-				<?
+				<?php
 				$facebook = get_field('facebook_url', 'option');
 				$twitter = get_field('twitter_url', 'option');
 				$insta = get_field('instagram_url', 'option');
