@@ -2,9 +2,9 @@
 	'use strict';
 
 	var formData = {
-		action	: 'ajax-submit',
-		fields 	: {},
-		nonce 	: fifty3_ajax.ajaxNonce
+		action: 'ajax-submit',
+		fields: {},
+		nonce: fifty3_ajax.ajaxNonce
 	};
 	var activeStates = {};
 	var hoverStates = {};
@@ -19,18 +19,18 @@
 			activeStates[states[i]] = {fill: '#8C8E90'};
 			hoverStates[states[i]] = {fill: '#7FA7AC'};
 		}
-	}).always(function() {
+	}).always(function () {
 		$('#map').usmap({
 			showLabels: false,
 			stateStyles: {fill: '#383839', stroke: '#FFF'},
 			stateHoverStyles: {fill: '#383839'},
 			stateSpecificStyles: activeStates,
 			stateSpecificHoverStyles: hoverStates,
-			click: function(event, data) {
-				$("#map > svg > path").each(function(){
+			click: function (event, data) {
+				$("#map > svg > path").each(function () {
 					$(this).css('fill', '');
 				});
-				
+
 				if ($.inArray(data.name, states)) {
 					$('#' + data.name).css('fill', '#7FA7AC');
 					$('.state-info > div').hide();
