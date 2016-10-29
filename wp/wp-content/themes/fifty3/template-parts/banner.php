@@ -8,7 +8,7 @@ if(is_page('home')) {?>
 
 	<section class="banner video-bg">
 		<?php while ( have_posts() ) : the_post(); ?>
-			<video id="auto-video" autoplay loop muted style="background-image: url('<? bloginfo('template_directory'); ?>/img/fifty3-home-video-placeholder.jpg');">
+			<video id="auto-video" preload autoplay loop muted poster="<?php bloginfo('template_directory'); ?>/img/fifty3-home-video-placeholder.jpg">
 				<source src="<?php bloginfo('template_directory'); ?>/video/fifty3-home-background-no_audio.webm" type="application/webm">
 				<source src="<?php bloginfo('template_directory'); ?>/video/fifty3-home-background-no_audio.mp4" type="video/mp4">
 			</video>
