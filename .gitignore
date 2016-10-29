@@ -5,7 +5,6 @@ config.codekit
 /static
 .idea
 
-index.php
 README.md
 
 # wordpress specific
@@ -13,7 +12,6 @@ README.md
 /wp/wp-config-sample.php
 
 # wp core (as of 3.4.1)
-/wp/index.php
 /wp/license.txt
 /wp/readme.html
 /wp/wp-activate.php
