@@ -14,12 +14,14 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="description" content="<?php if ( $seo_descr ) { echo $seo_descr; } else { bloginfo( 'description' ); } ?>"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="author" content="<?php the_author_meta('display_name', 1); ?>" />
 	<meta property="og:url" content="http://www.agencyfifty3.com" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="<?php if ( $seo_title ) { echo $seo_title; } else { echo 'Check Out Agency Fifty3 in Denver, CO.'; } ?>" />
 	<meta property="og:description" content="<?php if ( $seo_descr ) { echo $seo_descr; } else { bloginfo( 'description' ); } ?>" />
-	<!-- <meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" /> -->
+	<?php
+	if ( has_post_thumbnail() ) { ?>
+		<meta property="og:image" content="<?php the_post_thumbnail_url(); ?>" />
+	<?php }; ?>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<title>
