@@ -12,7 +12,16 @@ get_template_part( 'template-parts/banner' );
 while ( have_posts() ) : the_post(); ?>
 
 <section class="no-padding">
-	<img src="<?php bloginfo('template_directory');?>/img/fifty3-people-group.gif" alt="Fifty3 Team on Mountain" width="100%">
+	<?php
+	$banner_img = get_field('banner_image');
+	$b_url = $banner_img['url'];
+	$b_alt = $banner_img['alt'];
+
+	if(get_field('banner_image')) { ?>
+		<img src="<?php echo $b_url ?>" alt="<?php echo $b_alt ?>" width="100%">
+	<?php } else { ?>
+		<img src="<?php bloginfo('template_directory');?>/img/fifty3-people-group.gif" alt="Fifty3 Team on Mountain" width="100%">
+	<?php }; ?>
 </section>
 <section class="team">
 	<div class="wrapper">
